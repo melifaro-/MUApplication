@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C06C97311551C8D6007664B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06C97301551C8D6007664B2 /* Foundation.framework */; };
+		C06C977F1551C928007664B2 /* SNAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C973E1551C928007664B2 /* SNAccount.m */; };
+		C06C97801551C928007664B2 /* SNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C973F1551C928007664B2 /* SNUser.m */; };
+		C06C97811551C928007664B2 /* FBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C97411551C928007664B2 /* FBAccount.m */; };
+		C06C979B1551C928007664B2 /* FBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C97611551C928007664B2 /* FBUser.m */; };
+		C06C979C1551C928007664B2 /* FBAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97631551C928007664B2 /* FBAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C979D1551C928007664B2 /* FBUser.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97641551C928007664B2 /* FBUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C979E1551C928007664B2 /* MUAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97651551C928007664B2 /* MUAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C979F1551C928007664B2 /* MUUser.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97661551C928007664B2 /* MUUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C97A01551C928007664B2 /* RequestState.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97671551C928007664B2 /* RequestState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C97A11551C928007664B2 /* SNAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97681551C928007664B2 /* SNAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C97A21551C928007664B2 /* SNSessionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97691551C928007664B2 /* SNSessionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C97A31551C928007664B2 /* SNUser.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C976A1551C928007664B2 /* SNUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C97A41551C928007664B2 /* VKAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C976B1551C928007664B2 /* VKAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C97A51551C928007664B2 /* VKUser.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C976C1551C928007664B2 /* VKUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06C97A61551C928007664B2 /* MeetUp.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C976F1551C928007664B2 /* MeetUp.h */; };
+		C06C97A71551C928007664B2 /* MeetUp.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C97701551C928007664B2 /* MeetUp.m */; };
+		C06C97A81551C928007664B2 /* MUAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C97711551C928007664B2 /* MUAccount.m */; };
+		C06C97A91551C928007664B2 /* MURequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97721551C928007664B2 /* MURequest.h */; };
+		C06C97AA1551C928007664B2 /* MURequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C97731551C928007664B2 /* MURequest.m */; };
+		C06C97AB1551C928007664B2 /* MUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C97741551C928007664B2 /* MUUser.m */; };
+		C06C97AC1551C928007664B2 /* VKAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C97761551C928007664B2 /* VKAccount.m */; };
+		C06C97AD1551C928007664B2 /* Vkontakte.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97771551C928007664B2 /* Vkontakte.h */; };
+		C06C97AE1551C928007664B2 /* Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C97781551C928007664B2 /* Vkontakte.m */; };
+		C06C97AF1551C928007664B2 /* VKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C06C97791551C928007664B2 /* VKRequest.h */; };
+		C06C97B01551C928007664B2 /* VKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C977A1551C928007664B2 /* VKRequest.m */; };
+		C06C97B11551C928007664B2 /* VKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C977B1551C928007664B2 /* VKUser.m */; };
+		C07454281551D11B00A53EAC /* RequestDelegates.h in Headers */ = {isa = PBXBuildFile; fileRef = C07454271551D11B00A53EAC /* RequestDelegates.h */; };
+		C07454C01551E34600A53EAC /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07454BD1551E33C00A53EAC /* libfacebook_ios_sdk.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C07454BC1551E33C00A53EAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C07454B51551E33B00A53EAC /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "facebook-ios-sdk";
+		};
+		C07454BE1551E34300A53EAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C07454B51551E33B00A53EAC /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "facebook-ios-sdk";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C06C972D1551C8D6007664B2 /* libMSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C06C97301551C8D6007664B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C06C97341551C8D6007664B2 /* MSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MSDK-Prefix.pch"; sourceTree = "<group>"; };
+		C06C973E1551C928007664B2 /* SNAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNAccount.m; sourceTree = "<group>"; };
+		C06C973F1551C928007664B2 /* SNUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNUser.m; sourceTree = "<group>"; };
+		C06C97411551C928007664B2 /* FBAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAccount.m; sourceTree = "<group>"; };
+		C06C97611551C928007664B2 /* FBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUser.m; sourceTree = "<group>"; };
+		C06C97631551C928007664B2 /* FBAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAccount.h; sourceTree = "<group>"; };
+		C06C97641551C928007664B2 /* FBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUser.h; sourceTree = "<group>"; };
+		C06C97651551C928007664B2 /* MUAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUAccount.h; sourceTree = "<group>"; };
+		C06C97661551C928007664B2 /* MUUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUser.h; sourceTree = "<group>"; };
+		C06C97671551C928007664B2 /* RequestState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestState.h; sourceTree = "<group>"; };
+		C06C97681551C928007664B2 /* SNAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNAccount.h; sourceTree = "<group>"; };
+		C06C97691551C928007664B2 /* SNSessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSessionDelegate.h; sourceTree = "<group>"; };
+		C06C976A1551C928007664B2 /* SNUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNUser.h; sourceTree = "<group>"; };
+		C06C976B1551C928007664B2 /* VKAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAccount.h; sourceTree = "<group>"; };
+		C06C976C1551C928007664B2 /* VKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKUser.h; sourceTree = "<group>"; };
+		C06C976F1551C928007664B2 /* MeetUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUp.h; sourceTree = "<group>"; };
+		C06C97701551C928007664B2 /* MeetUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUp.m; sourceTree = "<group>"; };
+		C06C97711551C928007664B2 /* MUAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUAccount.m; sourceTree = "<group>"; };
+		C06C97721551C928007664B2 /* MURequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MURequest.h; sourceTree = "<group>"; };
+		C06C97731551C928007664B2 /* MURequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MURequest.m; sourceTree = "<group>"; };
+		C06C97741551C928007664B2 /* MUUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUUser.m; sourceTree = "<group>"; };
+		C06C97761551C928007664B2 /* VKAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAccount.m; sourceTree = "<group>"; };
+		C06C97771551C928007664B2 /* Vkontakte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vkontakte.h; sourceTree = "<group>"; };
+		C06C97781551C928007664B2 /* Vkontakte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vkontakte.m; sourceTree = "<group>"; };
+		C06C97791551C928007664B2 /* VKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRequest.h; sourceTree = "<group>"; };
+		C06C977A1551C928007664B2 /* VKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKRequest.m; sourceTree = "<group>"; };
+		C06C977B1551C928007664B2 /* VKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKUser.m; sourceTree = "<group>"; };
+		C07454271551D11B00A53EAC /* RequestDelegates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDelegates.h; sourceTree = "<group>"; };
+		C07454B51551E33B00A53EAC /* facebook-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "facebook-ios-sdk.xcodeproj"; path = "../../../FBSDK/facebook-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C06C972A1551C8D6007664B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C07454C01551E34600A53EAC /* libfacebook_ios_sdk.a in Frameworks */,
+				C06C97311551C8D6007664B2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C06C97221551C8D6007664B2 = {
+			isa = PBXGroup;
+			children = (
+				C06C973D1551C928007664B2 /* Common */,
+				C06C97401551C928007664B2 /* Facebook */,
+				C06C97621551C928007664B2 /* Include */,
+				C06C976E1551C928007664B2 /* MeetUP */,
+				C06C97751551C928007664B2 /* VKontakte */,
+				C06C972F1551C8D6007664B2 /* Frameworks */,
+				C06C972E1551C8D6007664B2 /* Products */,
+				C06C97331551C8D6007664B2 /* Supporting Files */,
+			);
+			sourceTree = "<group>";
+		};
+		C06C972E1551C8D6007664B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C06C972D1551C8D6007664B2 /* libMSDK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C06C972F1551C8D6007664B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C06C97301551C8D6007664B2 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C06C97331551C8D6007664B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C06C97341551C8D6007664B2 /* MSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = MSDK;
+			sourceTree = "<group>";
+		};
+		C06C973D1551C928007664B2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C06C973E1551C928007664B2 /* SNAccount.m */,
+				C06C973F1551C928007664B2 /* SNUser.m */,
+			);
+			name = Common;
+			path = MSDK/Common;
+			sourceTree = "<group>";
+		};
+		C06C97401551C928007664B2 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				C07454B51551E33B00A53EAC /* facebook-ios-sdk.xcodeproj */,
+				C06C97411551C928007664B2 /* FBAccount.m */,
+				C06C97611551C928007664B2 /* FBUser.m */,
+			);
+			name = Facebook;
+			path = MSDK/Facebook;
+			sourceTree = "<group>";
+		};
+		C06C97621551C928007664B2 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				C06C97631551C928007664B2 /* FBAccount.h */,
+				C06C97641551C928007664B2 /* FBUser.h */,
+				C06C97651551C928007664B2 /* MUAccount.h */,
+				C06C97661551C928007664B2 /* MUUser.h */,
+				C06C97671551C928007664B2 /* RequestState.h */,
+				C06C97681551C928007664B2 /* SNAccount.h */,
+				C06C97691551C928007664B2 /* SNSessionDelegate.h */,
+				C06C976A1551C928007664B2 /* SNUser.h */,
+				C06C976B1551C928007664B2 /* VKAccount.h */,
+				C06C976C1551C928007664B2 /* VKUser.h */,
+				C07454271551D11B00A53EAC /* RequestDelegates.h */,
+			);
+			name = Include;
+			path = MSDK/Include;
+			sourceTree = "<group>";
+		};
+		C06C976E1551C928007664B2 /* MeetUP */ = {
+			isa = PBXGroup;
+			children = (
+				C06C976F1551C928007664B2 /* MeetUp.h */,
+				C06C97701551C928007664B2 /* MeetUp.m */,
+				C06C97711551C928007664B2 /* MUAccount.m */,
+				C06C97721551C928007664B2 /* MURequest.h */,
+				C06C97731551C928007664B2 /* MURequest.m */,
+				C06C97741551C928007664B2 /* MUUser.m */,
+			);
+			name = MeetUP;
+			path = MSDK/MeetUP;
+			sourceTree = "<group>";
+		};
+		C06C97751551C928007664B2 /* VKontakte */ = {
+			isa = PBXGroup;
+			children = (
+				C06C97761551C928007664B2 /* VKAccount.m */,
+				C06C97771551C928007664B2 /* Vkontakte.h */,
+				C06C97781551C928007664B2 /* Vkontakte.m */,
+				C06C97791551C928007664B2 /* VKRequest.h */,
+				C06C977A1551C928007664B2 /* VKRequest.m */,
+				C06C977B1551C928007664B2 /* VKUser.m */,
+			);
+			name = VKontakte;
+			path = MSDK/VKontakte;
+			sourceTree = "<group>";
+		};
+		C07454B61551E33B00A53EAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C07454BD1551E33C00A53EAC /* libfacebook_ios_sdk.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C06C972B1551C8D6007664B2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C06C979C1551C928007664B2 /* FBAccount.h in Headers */,
+				C06C979D1551C928007664B2 /* FBUser.h in Headers */,
+				C06C979E1551C928007664B2 /* MUAccount.h in Headers */,
+				C06C979F1551C928007664B2 /* MUUser.h in Headers */,
+				C06C97A01551C928007664B2 /* RequestState.h in Headers */,
+				C06C97A11551C928007664B2 /* SNAccount.h in Headers */,
+				C06C97A21551C928007664B2 /* SNSessionDelegate.h in Headers */,
+				C06C97A31551C928007664B2 /* SNUser.h in Headers */,
+				C06C97A41551C928007664B2 /* VKAccount.h in Headers */,
+				C06C97A51551C928007664B2 /* VKUser.h in Headers */,
+				C06C97A61551C928007664B2 /* MeetUp.h in Headers */,
+				C06C97A91551C928007664B2 /* MURequest.h in Headers */,
+				C06C97AD1551C928007664B2 /* Vkontakte.h in Headers */,
+				C06C97AF1551C928007664B2 /* VKRequest.h in Headers */,
+				C07454281551D11B00A53EAC /* RequestDelegates.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C06C972C1551C8D6007664B2 /* MSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C06C973A1551C8D6007664B2 /* Build configuration list for PBXNativeTarget "MSDK" */;
+			buildPhases = (
+				C06C97291551C8D6007664B2 /* Sources */,
+				C06C972A1551C8D6007664B2 /* Frameworks */,
+				C06C972B1551C8D6007664B2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C07454BF1551E34300A53EAC /* PBXTargetDependency */,
+			);
+			name = MSDK;
+			productName = MSDK;
+			productReference = C06C972D1551C8D6007664B2 /* libMSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C06C97241551C8D6007664B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = C06C97271551C8D6007664B2 /* Build configuration list for PBXProject "MSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C06C97221551C8D6007664B2;
+			productRefGroup = C06C972E1551C8D6007664B2 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C07454B61551E33B00A53EAC /* Products */;
+					ProjectRef = C07454B51551E33B00A53EAC /* facebook-ios-sdk.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				C06C972C1551C8D6007664B2 /* MSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C07454BD1551E33C00A53EAC /* libfacebook_ios_sdk.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfacebook_ios_sdk.a;
+			remoteRef = C07454BC1551E33C00A53EAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C06C97291551C8D6007664B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C06C977F1551C928007664B2 /* SNAccount.m in Sources */,
+				C06C97801551C928007664B2 /* SNUser.m in Sources */,
+				C06C97811551C928007664B2 /* FBAccount.m in Sources */,
+				C06C979B1551C928007664B2 /* FBUser.m in Sources */,
+				C06C97A71551C928007664B2 /* MeetUp.m in Sources */,
+				C06C97A81551C928007664B2 /* MUAccount.m in Sources */,
+				C06C97AA1551C928007664B2 /* MURequest.m in Sources */,
+				C06C97AB1551C928007664B2 /* MUUser.m in Sources */,
+				C06C97AC1551C928007664B2 /* VKAccount.m in Sources */,
+				C06C97AE1551C928007664B2 /* Vkontakte.m in Sources */,
+				C06C97B01551C928007664B2 /* VKRequest.m in Sources */,
+				C06C97B11551C928007664B2 /* VKUser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C07454BF1551E34300A53EAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "facebook-ios-sdk";
+			targetProxy = C07454BE1551E34300A53EAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C06C97381551C8D6007664B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C06C97391551C8D6007664B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C06C973B1551C8D6007664B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DSTROOT = /tmp/MSDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSDK/MSDK-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "$(FACEBOOK_SDK)/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(FACEBOOK_SDK)/**";
+			};
+			name = Debug;
+		};
+		C06C973C1551C8D6007664B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DSTROOT = /tmp/MSDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSDK/MSDK-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "$(FACEBOOK_SDK)/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(FACEBOOK_SDK)/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C06C97271551C8D6007664B2 /* Build configuration list for PBXProject "MSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C06C97381551C8D6007664B2 /* Debug */,
+				C06C97391551C8D6007664B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C06C973A1551C8D6007664B2 /* Build configuration list for PBXNativeTarget "MSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C06C973B1551C8D6007664B2 /* Debug */,
+				C06C973C1551C8D6007664B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C06C97241551C8D6007664B2 /* Project object */;
+}
