@@ -36,7 +36,7 @@
     
     MUViewController* muvc = [[MUViewController alloc] initWithNibName:@"MUViewController" bundle:nil];
     [muvc setData:muAccount];
-    muvc.title = @"MeetUp";
+    muvc.title = @"MeetUP";
     FBViewController* fbvc = [[FBViewController alloc] initWithNibName:@"FBViewController" bundle:nil];
     [fbvc setData:muAccount];
     fbvc.title = @"FB";
