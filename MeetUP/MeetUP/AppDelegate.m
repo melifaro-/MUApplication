@@ -97,9 +97,7 @@
 // Pre iOS 4.2 support
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    if([muAccount.fbAccount handleOpenURL:url])
-        return YES;
-    else if ([muAccount.vkAccount handleOpenURL:url])
+    if([muAccount handleOpenURL:url])
         return YES;
     else
         return NO;
@@ -108,12 +106,7 @@
 // For iOS 4.2+ support
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    NSLog(@"url %@", url);
-    FBAccount* fba = [muAccount fbAccount];
-    VKAccount* vka = [muAccount vkAccount];
-    if([fba handleOpenURL:url])
-        return YES;
-    else if ([vka handleOpenURL:url])
+    if([muAccount handleOpenURL:url])
         return YES;
     else
         return NO;

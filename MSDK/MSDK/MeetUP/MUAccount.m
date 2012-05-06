@@ -61,6 +61,16 @@
     [super dealloc];
 }
 
+-(BOOL)handleOpenURL:(NSURL *)url
+{
+    if([_fbAccount handleOpenURL:url])
+        return YES;
+    else if ([_vkAccount handleOpenURL:url])
+        return YES;
+    else
+        return NO;
+}
+
 -(void)save
 {
     NSData* muAccountSerialized = [NSKeyedArchiver archivedDataWithRootObject:self];

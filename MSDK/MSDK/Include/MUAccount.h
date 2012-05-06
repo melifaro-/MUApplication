@@ -26,6 +26,8 @@
 @property (nonatomic, retain) VKAccount *vkAccount;
 @property (nonatomic, retain) MeetUp *meetup;
 
+-(BOOL)handleOpenURL:(NSURL *)url;
+
 -(void)signup:(NSString*)login withPassword:(NSString*)password;
 -(void)login:(NSString*)login withPassword:(NSString*)password;
 
