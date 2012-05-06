@@ -20,6 +20,13 @@
 		C06C96E81551C3C6007664B2 /* VKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C96E21551C3C6007664B2 /* VKViewController.m */; };
 		C06C96E91551C3C6007664B2 /* VKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06C96E31551C3C6007664B2 /* VKViewController.xib */; };
 		C07454B31551E2FD00A53EAC /* libMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07454B01551E2EC00A53EAC /* libMSDK.a */; };
+		F3F49D501556F0AE00579116 /* UIRegesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D481556F0AE00579116 /* UIRegesterViewController.m */; };
+		F3F49D511556F0AE00579116 /* MPUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D4A1556F0AE00579116 /* MPUIView.m */; };
+		F3F49D521556F0AE00579116 /* MPUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F49D4B1556F0AE00579116 /* MPUIView.xib */; };
+		F3F49D531556F0AE00579116 /* UISplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D4D1556F0AE00579116 /* UISplashViewController.m */; };
+		F3F49D541556F0AE00579116 /* UISplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F49D4E1556F0AE00579116 /* UISplashViewController.xib */; };
+		F3F49D551556F0AE00579116 /* UIRegesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F49D4F1556F0AE00579116 /* UIRegesterViewController.xib */; };
+		F3F49D571556F0D800579116 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F49D561556F0D800579116 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +67,16 @@
 		C06C96E21551C3C6007664B2 /* VKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKViewController.m; path = MeetUP/VKViewController.m; sourceTree = "<group>"; };
 		C06C96E31551C3C6007664B2 /* VKViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VKViewController.xib; path = MeetUP/VKViewController.xib; sourceTree = "<group>"; };
 		C07454A71551E2EB00A53EAC /* MSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MSDK.xcodeproj; path = ../MSDK/MSDK.xcodeproj; sourceTree = "<group>"; };
+		F3F49D471556F0AE00579116 /* UIRegesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRegesterViewController.h; sourceTree = "<group>"; };
+		F3F49D481556F0AE00579116 /* UIRegesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRegesterViewController.m; sourceTree = "<group>"; };
+		F3F49D491556F0AE00579116 /* MPUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUIView.h; sourceTree = "<group>"; };
+		F3F49D4A1556F0AE00579116 /* MPUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUIView.m; sourceTree = "<group>"; };
+		F3F49D4B1556F0AE00579116 /* MPUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPUIView.xib; sourceTree = "<group>"; };
+		F3F49D4C1556F0AE00579116 /* UISplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISplashViewController.h; sourceTree = "<group>"; };
+		F3F49D4D1556F0AE00579116 /* UISplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISplashViewController.m; sourceTree = "<group>"; };
+		F3F49D4E1556F0AE00579116 /* UISplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UISplashViewController.xib; sourceTree = "<group>"; };
+		F3F49D4F1556F0AE00579116 /* UIRegesterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIRegesterViewController.xib; sourceTree = "<group>"; };
+		F3F49D561556F0D800579116 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F49D571556F0D800579116 /* QuartzCore.framework in Frameworks */,
 				C07454B31551E2FD00A53EAC /* libMSDK.a in Frameworks */,
 				C06C96C51551BD11007664B2 /* UIKit.framework in Frameworks */,
 				C06C96C71551BD11007664B2 /* Foundation.framework in Frameworks */,
@@ -80,6 +98,7 @@
 		C06C96B51551BD10007664B2 = {
 			isa = PBXGroup;
 			children = (
+				F3F49D561556F0D800579116 /* QuartzCore.framework */,
 				C06C96D31551BD11007664B2 /* AppDelegate.h */,
 				C06C96D41551BD11007664B2 /* AppDelegate.m */,
 				C07454C61551E3E100A53EAC /* Controllers */,
@@ -132,6 +151,12 @@
 		C07454C61551E3E100A53EAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3F49D471556F0AE00579116 /* UIRegesterViewController.h */,
+				F3F49D481556F0AE00579116 /* UIRegesterViewController.m */,
+				F3F49D491556F0AE00579116 /* MPUIView.h */,
+				F3F49D4A1556F0AE00579116 /* MPUIView.m */,
+				F3F49D4C1556F0AE00579116 /* UISplashViewController.h */,
+				F3F49D4D1556F0AE00579116 /* UISplashViewController.m */,
 				C06C96DB1551C3C6007664B2 /* FBViewController.h */,
 				C06C96DC1551C3C6007664B2 /* FBViewController.m */,
 				C06C96DE1551C3C6007664B2 /* MUViewController.h */,
@@ -145,6 +170,9 @@
 		C07454C71551E3F600A53EAC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F3F49D4B1556F0AE00579116 /* MPUIView.xib */,
+				F3F49D4E1556F0AE00579116 /* UISplashViewController.xib */,
+				F3F49D4F1556F0AE00579116 /* UIRegesterViewController.xib */,
 				C06C96DD1551C3C6007664B2 /* FBViewController.xib */,
 				C06C96E01551C3C6007664B2 /* MUViewController.xib */,
 				C06C96E31551C3C6007664B2 /* VKViewController.xib */,
@@ -223,6 +251,9 @@
 				C06C96E51551C3C6007664B2 /* FBViewController.xib in Resources */,
 				C06C96E71551C3C6007664B2 /* MUViewController.xib in Resources */,
 				C06C96E91551C3C6007664B2 /* VKViewController.xib in Resources */,
+				F3F49D521556F0AE00579116 /* MPUIView.xib in Resources */,
+				F3F49D541556F0AE00579116 /* UISplashViewController.xib in Resources */,
+				F3F49D551556F0AE00579116 /* UIRegesterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +269,9 @@
 				C06C96E41551C3C6007664B2 /* FBViewController.m in Sources */,
 				C06C96E61551C3C6007664B2 /* MUViewController.m in Sources */,
 				C06C96E81551C3C6007664B2 /* VKViewController.m in Sources */,
+				F3F49D501556F0AE00579116 /* UIRegesterViewController.m in Sources */,
+				F3F49D511556F0AE00579116 /* MPUIView.m in Sources */,
+				F3F49D531556F0AE00579116 /* UISplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
