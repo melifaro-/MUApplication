@@ -10,6 +10,7 @@
 #import "MURequest.h"
 #import "SNSessionDelegate.h"
 
+@class SNAccount;
 
 @interface MeetUp : NSObject <MURequestDelegate>
 {
@@ -19,6 +20,7 @@
     NSString* _userId;
 
     MURequest*  _loginRequest;
+    MURequest*  _snLoginRequest;
     MURequest*  _logoutRequest;
 }
 
@@ -30,6 +32,7 @@
 
 -(void)signup:(NSString*)login withPassword:(NSString*)password;
 -(void)login:(NSString*)login withPassword:(NSString*)password;
+-(void)loginWithSNAccount:(SNAccount*)snAccount;
 - (void)logout;
 
 - (MURequest*)requestWithMethodName:(NSString *)methodName

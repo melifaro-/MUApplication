@@ -11,7 +11,7 @@
 
 @interface MUViewController : UIViewController <SNSessionDelegate>
 {
-    MUAccount           *_muAccount;
+    MUAccount               *_muAccount;
 
     IBOutlet UITextField*   _loginTextField;
     IBOutlet UITextField*   _pswdTextField;
@@ -24,5 +24,9 @@
 -(IBAction)loginButtonTouched:(id)sender;
 -(IBAction)logoutButtonTouched:(id)sender;
 -(IBAction)saveProfileButtonTouched:(id)sender;
+-(IBAction)resetProfileButtonTouched:(id)sender;
+
+-(IBAction)loginWithFBButtonTouched:(id)sender;
+-(IBAction)loginWithVKButtonTouched:(id)sender;
 
 @end

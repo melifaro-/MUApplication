@@ -43,6 +43,11 @@
     [super encodeWithCoder:coder];
 }
 
+- (NSString*)snType
+{
+    return @"facebook";
+}
+
 -(void)dealloc
 {
     self.facebook = nil;

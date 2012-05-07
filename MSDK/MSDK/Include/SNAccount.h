@@ -23,4 +23,7 @@
 @property (nonatomic, retain) NSDate                        *expDate;
 @property (nonatomic, retain) NSString                       *userId;
 
+//will be used in social network authorization process
+-(NSString*)snType;
+
 @end
