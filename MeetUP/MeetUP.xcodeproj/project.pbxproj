@@ -126,6 +126,7 @@
 			children = (
 				F3F49D561556F0D800579116 /* QuartzCore.framework */,
 				C07454A71551E2EB00A53EAC /* MSDK.xcodeproj */,
+				F3F49D561556F0D800579116 /* QuartzCore.framework */,
 				C06C96C41551BD11007664B2 /* UIKit.framework */,
 				C06C96C61551BD11007664B2 /* Foundation.framework */,
 				C06C96C81551BD11007664B2 /* CoreGraphics.framework */,
