@@ -98,7 +98,6 @@
 		C06C96B51551BD10007664B2 = {
 			isa = PBXGroup;
 			children = (
-				F3F49D561556F0D800579116 /* QuartzCore.framework */,
 				C06C96D31551BD11007664B2 /* AppDelegate.h */,
 				C06C96D41551BD11007664B2 /* AppDelegate.m */,
 				C07454C61551E3E100A53EAC /* Controllers */,
@@ -121,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				C07454A71551E2EB00A53EAC /* MSDK.xcodeproj */,
+				F3F49D561556F0D800579116 /* QuartzCore.framework */,
 				C06C96C41551BD11007664B2 /* UIKit.framework */,
 				C06C96C61551BD11007664B2 /* Foundation.framework */,
 				C06C96C81551BD11007664B2 /* CoreGraphics.framework */,
