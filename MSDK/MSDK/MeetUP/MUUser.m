@@ -10,4 +10,19 @@
 
 @implementation MUUser
 
+-(void)updateProfile
+{
+    
+}
+
+-(void)getNearbyUsers
+{
+    
+}
+
++(void)getUserById:(NSString *)userId
+{
+    
+}
+
 @end

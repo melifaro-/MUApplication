@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SNUser.h"
 
-@interface MUUser : NSObject
+@interface MUUser : SNUser
+{
+    CLLocation* lastFix;
+}
+
+-(void)updateProfile;
+-(void)getNearbyUsers;
++(void)getUserById:(NSString *)userId;
 
 @end
