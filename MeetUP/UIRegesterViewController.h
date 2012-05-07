@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MPUIView.h"
 
-@interface UIRegesterViewController : MPUIView
+@interface UIRegesterViewController : MPUIView <UITableViewDataSource, UITableViewDelegate>
+{
+    NSArray *socialNetworks;
+    UITableView *socialNetworkTable;
+    NSString *description;
+}
+
+@property (nonatomic, retain) NSArray *socialNetworks;
+@property (nonatomic, retain) NSString *description;
 
 @end
