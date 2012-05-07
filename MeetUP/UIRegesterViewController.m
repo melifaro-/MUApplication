@@ -9,6 +9,8 @@
 #define TABLE_MARGIN 10.
 
 #import "UIRegesterViewController.h"
+#import "FBViewController.h"
+#import "VKViewController.h"
 
 @implementation UIRegesterViewController
 @synthesize socialNetworks;
@@ -158,7 +160,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    switch (indexPath.row)
+    {
+        case 1:
+        {
+            FBViewController *viewController = [[[FBViewController alloc] init] autorelease];
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case 2:
+        {
+            VKViewController *viewController = [[[VKViewController alloc] init] autorelease];
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

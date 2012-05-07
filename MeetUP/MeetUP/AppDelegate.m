@@ -1,18 +1,15 @@
 //
 //  AppDelegate.m
-//  CoolProject
+//  MSDK
 //
-//  Created by Igor Botov on 4/19/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Alexander Petrovichev on 4/9/12.
+//  Copyright (c) 2012 apetrovichev@me.com. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "FBViewController.h"
-#import "VKViewController.h"
-#import "MUViewController.h"
 #import "UISplashViewController.h"
 
-#define SDK_DEBUG
+//#define SDK_DEBUG
 
 @implementation AppDelegate
 

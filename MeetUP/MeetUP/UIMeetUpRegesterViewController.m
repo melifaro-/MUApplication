@@ -7,6 +7,7 @@
 //
 
 #import "UIMeetUpRegesterViewController.h"
+#import "AppDelegate.h"
 
 @implementation UIMeetUpRegesterViewController
 @synthesize photo;
@@ -14,8 +15,9 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+        _muAccount = [AppDelegate appDelegate].muAccount;
     }
     return self;
 }
@@ -48,7 +50,7 @@
     sview.backgroundColor = [UIColor clearColor];
     self.navBar.hidden = NO;
     self.backButton.hidden = NO;
-    self.nextButton.hidden = YES;
+    self.nextButton.hidden = NO;
     self.title = @"Регистрация";
     [self layoutNavigationBar];
     [self.viewContent addSubview:sview];
@@ -102,5 +104,21 @@
     [picker dismissModalViewControllerAnimated:YES];
     photo.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 }
+
+-(IBAction)nextNuttonPressed:(id)sender
+{
+    [_muAccount signup:_loginTextField.text withPassword:_pswdTextField.text];
+}
+
+- (void)didLogin
+{
+    NSLog(@"did login");
+}
+
+- (void)didNotLogin:(BOOL)cancelled
+{
+    NSLog(@"did not login");
+}
+
 
 @end
