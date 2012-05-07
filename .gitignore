@@ -10,4 +10,6 @@ Thumbs.db
 MeetUP/MeetUP.xcodeproj/project.xcworkspace
 MeetUP/MeetUP.xcodeproj/xcuserdata
 MSDK/MSDK.xcodeproj/xcuserdata
-MSDK/MSDK/project.xcworkspace
+FBSDK/facebook-ios-sdk.xcodeproj/xcuserdata
+MSDK/MSDK.xcodeproj/project.xcworkspace
+FBSDK/facebook-ios-sdk.xcodeproj/project.xcworkspace

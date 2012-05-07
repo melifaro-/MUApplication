@@ -1,9 +1,9 @@
-	//
-//  MUAccount.m
-//  CoolProject
 //
-//  Created by Igor Botov on 4/22/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  MUAccount.m
+//  MSDK
+//
+//  Created by Alexander Petrovichev on 4/22/12.
+//  Copyright (c) 2012 apetrovichev@me.com. All rights reserved.
 //
 
 #import "MUAccount.h"

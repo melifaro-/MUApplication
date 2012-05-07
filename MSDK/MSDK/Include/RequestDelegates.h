@@ -2,8 +2,8 @@
 //  RequestDelegates.h
 //  MSDK
 //
-//  Created by Igor Botov on 5/3/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Alexander Petrovichev on 5/3/12.
+//  Copyright (c) 2012 apetrovichev@me.com. All rights reserved.
 //
 
 @class MURequest;

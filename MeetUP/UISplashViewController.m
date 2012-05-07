@@ -8,6 +8,7 @@
 
 #import "UISplashViewController.h"
 #import "UIRegesterViewController.h"
+#import "UIMeetUpRegesterViewController.h"
 
 @implementation UISplashViewController
 
@@ -81,7 +82,9 @@
 
 - (IBAction)regesterViaMeetUp:(id)sender
 {
-    
+    UIMeetUpRegesterViewController *viewController = [[[UIMeetUpRegesterViewController alloc] initWithNibName:@"MPUIView" bundle:nil] autorelease];
+    [self performTransition];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

@@ -27,6 +27,8 @@
 		F3F49D541556F0AE00579116 /* UISplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F49D4E1556F0AE00579116 /* UISplashViewController.xib */; };
 		F3F49D551556F0AE00579116 /* UIRegesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F49D4F1556F0AE00579116 /* UIRegesterViewController.xib */; };
 		F3F49D571556F0D800579116 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F49D561556F0D800579116 /* QuartzCore.framework */; };
+		F3F49D5E1557CFEA00579116 /* UIMeetUpRegesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D5D1557CFEA00579116 /* UIMeetUpRegesterViewController.m */; };
+		F3F49D601557D01B00579116 /* UIMeetUpRegesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F49D5F1557D01B00579116 /* UIMeetUpRegesterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,9 @@
 		F3F49D4E1556F0AE00579116 /* UISplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UISplashViewController.xib; sourceTree = "<group>"; };
 		F3F49D4F1556F0AE00579116 /* UIRegesterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIRegesterViewController.xib; sourceTree = "<group>"; };
 		F3F49D561556F0D800579116 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F3F49D5C1557CFEA00579116 /* UIMeetUpRegesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIMeetUpRegesterViewController.h; path = MeetUP/UIMeetUpRegesterViewController.h; sourceTree = "<group>"; };
+		F3F49D5D1557CFEA00579116 /* UIMeetUpRegesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIMeetUpRegesterViewController.m; path = MeetUP/UIMeetUpRegesterViewController.m; sourceTree = "<group>"; };
+		F3F49D5F1557D01B00579116 /* UIMeetUpRegesterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMeetUpRegesterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +182,7 @@
 				C06C96E01551C3C6007664B2 /* MUViewController.xib */,
 				C06C96E31551C3C6007664B2 /* VKViewController.xib */,
 				F3F49D4F1556F0AE00579116 /* UIRegesterViewController.xib */,
+				F3F49D5F1557D01B00579116 /* UIMeetUpRegesterViewController.xib */,
 			);
 			name = Regester;
 			sourceTree = "<group>";
@@ -192,6 +198,8 @@
 		F3F49D5A15572F6600579116 /* Regester */ = {
 			isa = PBXGroup;
 			children = (
+				F3F49D5C1557CFEA00579116 /* UIMeetUpRegesterViewController.h */,
+				F3F49D5D1557CFEA00579116 /* UIMeetUpRegesterViewController.m */,
 				F3F49D471556F0AE00579116 /* UIRegesterViewController.h */,
 				F3F49D481556F0AE00579116 /* UIRegesterViewController.m */,
 				C06C96DB1551C3C6007664B2 /* FBViewController.h */,
@@ -287,6 +295,7 @@
 				F3F49D521556F0AE00579116 /* MPUIView.xib in Resources */,
 				F3F49D541556F0AE00579116 /* UISplashViewController.xib in Resources */,
 				F3F49D551556F0AE00579116 /* UIRegesterViewController.xib in Resources */,
+				F3F49D601557D01B00579116 /* UIMeetUpRegesterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +314,7 @@
 				F3F49D501556F0AE00579116 /* UIRegesterViewController.m in Sources */,
 				F3F49D511556F0AE00579116 /* MPUIView.m in Sources */,
 				F3F49D531556F0AE00579116 /* UISplashViewController.m in Sources */,
+				F3F49D5E1557CFEA00579116 /* UIMeetUpRegesterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +345,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Михаил Голубев (U77ZQ2VLFA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -350,6 +361,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "EDCA41DE-1939-434A-AEFE-48115211B0B3";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -359,6 +371,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Михаил Голубев (U77ZQ2VLFA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -368,6 +381,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "EDCA41DE-1939-434A-AEFE-48115211B0B3";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

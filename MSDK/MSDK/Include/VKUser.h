@@ -1,9 +1,9 @@
 //
 //  VKUser.h
-//  CoolProject
+//  MSDK
 //
-//  Created by Igor Botov on 4/22/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Alexander Petrovichev on 4/22/12.
+//  Copyright (c) 2012 apetrovichev@me.com. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
