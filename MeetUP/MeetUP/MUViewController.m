@@ -22,6 +22,16 @@
     [_muAccount login:_loginTextField.text withPassword:_pswdTextField.text];
 }
 
+-(IBAction)loginWithFBButtonTouched:(id)sender
+{
+    [_muAccount loginWithSocialNetwork:_muAccount.fbAccount];
+}
+
+-(IBAction)loginWithVKButtonTouched:(id)sender
+{
+    [_muAccount loginWithSocialNetwork:_muAccount.vkAccount];
+}
+
 -(IBAction)signupButtonTouched:(id)sender
 {
     [_muAccount signup:_loginTextField.text withPassword:_pswdTextField.text];
@@ -35,6 +45,11 @@
 -(IBAction)saveProfileButtonTouched:(id)sender
 {
     [_muAccount save];
+}
+
+-(IBAction)resetProfileButtonTouched:(id)sender
+{
+    [MUAccount reset];
 }
 
 - (void)didLogin

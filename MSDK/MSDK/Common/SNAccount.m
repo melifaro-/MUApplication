@@ -33,6 +33,11 @@
     [coder encodeObject:expDate forKey:@"expDate"];
 }
 
+-(NSString*)snType
+{
+    return @"SNAccount";
+}
+
 -(void)dealloc
 {
     self.userId = nil;

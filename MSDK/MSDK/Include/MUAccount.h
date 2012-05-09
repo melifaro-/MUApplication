@@ -30,8 +30,10 @@
 
 -(void)signup:(NSString*)login withPassword:(NSString*)password;
 -(void)login:(NSString*)login withPassword:(NSString*)password;
+-(void)loginWithSocialNetwork:(SNAccount*)snAccount;
 
 -(void)save;
 +(MUAccount*)restore;
++(void)reset;
 
 @end

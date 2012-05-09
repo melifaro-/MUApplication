@@ -99,6 +99,18 @@
     return muAccount;
 }
 
++(void)reset
+{
+    NSArray *docsFoundPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsPath = [[docsFoundPaths objectAtIndex:0] stringByAppendingPathComponent:MUACCOUNT_FILE];
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:docsPath];
+    if (fileExists)
+    {
+        NSError* error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:docsPath error:&error];
+        NSLog(@"MUAccount reset errors %@", error);
+    }
+}
 
 -(void)signup:(NSString*)login withPassword:(NSString*)password
 {
@@ -113,6 +125,14 @@
     if(![_meetup isSessionValid])
     {
         [_meetup login:login withPassword:password];
+    }
+}
+
+-(void)loginWithSocialNetwork:(SNAccount*)snAccount
+{
+    if(![_meetup isSessionValid])
+    {
+        [_meetup loginWithSNAccount:snAccount];
     }
 }
 

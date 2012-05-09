@@ -7,6 +7,7 @@
 //
 
 #import "MeetUp.h"
+#import "SNAccount.h"
 
 static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
 
@@ -81,6 +82,18 @@ static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
                                    @"false", @"signup",
                                    nil];
     _loginRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"GET" andDelegate:self];
+}
+
+-(void)loginWithSNAccount:(SNAccount*)snAccount
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   snAccount.snType, @"provider",
+                                   nil];
+    if([snAccount authkey])
+    {
+        [params setObject:snAccount.authkey forKey:@"key"];
+    }
+    _snLoginRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"GET" andDelegate:self];
 }
 
 - (void)logout
@@ -159,6 +172,10 @@ static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
         {
             [self.sessionDelegate didLogout];
         }
+    }
+    else if (request == _snLoginRequest)
+    {
+    
     }
 }
 

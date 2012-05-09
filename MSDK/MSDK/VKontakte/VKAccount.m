@@ -53,6 +53,11 @@ static VKAccount* _vkAccount = nil;
     [super encodeWithCoder:coder];
 }
 
+- (NSString*)snType
+{
+    return @"vkontakte";
+}
+
 -(void)dealloc
 {
     self.vkontakte = nil;
