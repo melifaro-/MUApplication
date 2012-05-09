@@ -38,11 +38,6 @@
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)coder
-{
-    [super encodeWithCoder:coder];
-}
-
 - (NSString*)snType
 {
     return @"facebook";

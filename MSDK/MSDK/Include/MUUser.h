@@ -7,7 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SNUser.h"
+#import "RequestDelegates.h"
 
-@interface MUUser : NSObject
+@class MeetUp;
+
+@interface MUUser : SNUser <MURequestDelegate>
+{
+    MeetUp*     _meetup;
+    CLLocation* lastFix;
+    MURequest*  _updateProfileRequest;
+    MURequest*  _nearbayUsersRequest;
+    MURequest*  _userRequest;
+}
+
+@property (nonatomic, retain) MeetUp* meetup;
+
+-(void)updateProfile;
+-(void)getNearbyUsers;
+-(void)getUserById:(NSString *)userId;
 
 @end

@@ -12,9 +12,26 @@
 
 static VKAccount* _vkAccount = nil;
 
+@interface VKAccount(private)
+
++(void)setVKAccount:(VKAccount*)vkAccount;
+
+@end
+
+@implementation  VKAccount(private)
+
++(void)setVKAccount:(VKAccount*)vkAccount
+{
+    [_vkAccount release];
+    _vkAccount = vkAccount;
+}
+
+@end
+
 @implementation VKAccount
 
 @synthesize vkontakte;
+@synthesize vkUser = _vkUser;
 
 + (VKAccount*)getInstance
 {
@@ -25,9 +42,10 @@ static VKAccount* _vkAccount = nil;
 {
     if (self = [super init])
     {
+        [VKAccount setVKAccount:self];
         self.vkontakte = [[Vkontakte alloc] initWithAppId:VK_APP_ID andDelegate:self];
         [vkontakte release];
-        _vkAccount = self;
+        self.vkUser = [[[VKUser alloc] init] autorelease];
     }
     return self;
 }
@@ -38,12 +56,10 @@ static VKAccount* _vkAccount = nil;
     {
         self.vkontakte = [[Vkontakte alloc] initWithAppId:VK_APP_ID andDelegate:self];
         [vkontakte release];
-        //if (self.authkey && self.expDate && [self.expDate compare:[NSDate date]] == NSOrderedDescending)
-        {
-            vkontakte.accessToken = authkey;
-            vkontakte.expirationDate = expDate;
-        }
-        _vkAccount = self;
+        vkontakte.accessToken = authkey;
+        vkontakte.expirationDate = expDate;
+        [VKAccount setVKAccount:self];
+        self.vkUser = [decoder decodeObjectForKey:@"vkUser"];
     }
     return self;
 }
@@ -51,6 +67,7 @@ static VKAccount* _vkAccount = nil;
 - (void)encodeWithCoder:(NSCoder *)coder
 {
     [super encodeWithCoder:coder];
+    [coder encodeObject:_vkUser forKey:@"vkUser"];
 }
 
 - (NSString*)snType
@@ -61,7 +78,7 @@ static VKAccount* _vkAccount = nil;
 -(void)dealloc
 {
     self.vkontakte = nil;
-    self.userId = nil;
+    self.vkUser = nil;
     [super dealloc];
 }
 
@@ -69,7 +86,6 @@ static VKAccount* _vkAccount = nil;
 {
     return [vkontakte handleOpenURL:url];
 }
-
 
 -(void)login
 {
@@ -96,7 +112,7 @@ static VKAccount* _vkAccount = nil;
 {
     self.authkey = vkontakte.accessToken;
     self.expDate = vkontakte.expirationDate;
-    self.userId = vkontakte.userId;
+    self.vkUser.uid = vkontakte.userId;
     if ([sessionDelegate respondsToSelector:@selector(didLogin)])
     {
         [sessionDelegate didLogin];

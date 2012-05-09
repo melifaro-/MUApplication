@@ -9,13 +9,43 @@
 #import "VKViewController.h"
 #import "AppDelegate.h"
 
-@implementation VKViewController
+@interface VKViewController(private)
 
--(void)setData:(MUAccount*)account
+-(void)initMeetUpInstances;
+
+@end
+
+@implementation VKViewController(private)
+
+-(void)initMeetUpInstances
 {
-    _muAccount = account;
+    _muAccount = [AppDelegate getInstance].muAccount;
     _vka = _muAccount.vkAccount;
     [_vka setSessionDelegate:self];
+    _user = _vka.vkUser;
+    [_user setUserDelegate:self];
+}
+
+@end
+
+@implementation VKViewController
+
+-(id)init
+{
+    if (self = [super init])
+    {
+        [self initMeetUpInstances];
+    }
+    return self;
+}
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
+    {
+        [self initMeetUpInstances];
+    }
+    return self;
 }
 
 -(IBAction)loginButtonTouched:(id)sender
@@ -25,9 +55,8 @@
 
 -(IBAction)getMeButtonTouched:(id)sender
 {
-    _user = [[VKUser alloc] init];
     [_user setUserDelegate:self];
-    [_user getUserById:_vka.userId];
+    [_user getUserById:_user.uid];
 }
 
 -(IBAction)getMyFriendsButtonTouched:(id)sender
@@ -77,5 +106,26 @@
 {
     [myImage setImage:_user.photo];
 }
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    NSArray* array = [[NSBundle mainBundle] loadNibNamed:@"VKViewController" owner:self options:nil];
+    UIView* sview = [array objectAtIndex:0];
+    sview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    sview.frame = CGRectMake(0, 0, self.viewContent.frame.size.width, self.viewContent.frame.size.height);
+    self.navBar.hidden = NO;
+    self.backButton.hidden = NO;
+    self.nextButton.hidden = YES;
+    self.title = @"VK Test";
+    [self layoutNavigationBar];
+    [self.viewContent addSubview:sview];
+
+    if (_user)
+    {
+        [myImage setImage:_user.photo];
+    }
+}
+
 
 @end

@@ -11,6 +11,7 @@
 #import "UIRegesterViewController.h"
 #import "FBViewController.h"
 #import "VKViewController.h"
+#import "MUViewController.h"
 
 @implementation UIRegesterViewController
 @synthesize socialNetworks;
@@ -58,7 +59,7 @@
     self.title = @"Регистрация";
     [self layoutNavigationBar];
     [self.viewContent addSubview:sview];
-    self.socialNetworks = [NSArray arrayWithObjects:@"Twitter", @"Facebook", @"VK", @"Foursquare", @"Одноклассники", @"МойМир@mail.ru", nil];
+    self.socialNetworks = [NSArray arrayWithObjects:@"Twitter", @"Facebook", @"VK", @"Foursquare", @"Одноклассники", @"МойМир@mail.ru", @"Meet UP Test", nil];
     socialNetworkTable = [[UITableView alloc] initWithFrame:CGRectMake(TABLE_MARGIN / 2,
                                                                        TABLE_MARGIN / 2,
                                                                        viewContent.frame.size.width,
@@ -164,13 +165,19 @@
     {
         case 1:
         {
-            FBViewController *viewController = [[[FBViewController alloc] init] autorelease];
+            FBViewController *viewController = [[[FBViewController alloc] initWithNibName:@"MPUIView" bundle:nil] autorelease];
             [self.navigationController pushViewController:viewController animated:YES];
             break;
         }
         case 2:
         {
-            VKViewController *viewController = [[[VKViewController alloc] init] autorelease];
+            VKViewController *viewController = [[[VKViewController alloc] initWithNibName:@"MPUIView" bundle:nil] autorelease];
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case 6:
+        {
+            MUViewController *viewController = [[[MUViewController alloc] initWithNibName:@"MPUIView" bundle:nil] autorelease];
             [self.navigationController pushViewController:viewController animated:YES];
             break;
         }

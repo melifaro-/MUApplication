@@ -18,7 +18,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        _muAccount = [AppDelegate appDelegate].muAccount;
+        _muAccount = [AppDelegate getInstance].muAccount;
     }
     return self;
 }

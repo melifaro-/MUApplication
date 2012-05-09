@@ -11,20 +11,46 @@
 
 #define MUACCOUNT_FILE @"muaccount"
 
+static MUAccount* _muAccount = nil;
+
+@interface MUAccount(private)
+
++(void)setMUAccount:(MUAccount*)muAccount;
+
+@end
+
+@implementation  MUAccount(private)
+
++(void)setMUAccount:(MUAccount*)muAccount
+{
+    [_muAccount release];
+    _muAccount = muAccount;
+}
+
+@end
+
 @implementation MUAccount
 
+@synthesize muUser = _muUser;
 @synthesize meetup = _meetup;
 @synthesize fbAccount = _fbAccount;
 @synthesize vkAccount = _vkAccount;
+
++ (MUAccount*)getInstance
+{
+    return _muAccount;
+}
 
 -(id)init
 {
     if (self = [super init])
     {
+        [MUAccount setMUAccount:self];
         self.meetup = [[[MeetUp alloc] init] autorelease];
         [_meetup setSessionDelegate:self];
         self.fbAccount = [[[FBAccount alloc] init] autorelease];
         self.vkAccount = [[[VKAccount alloc] init] autorelease];
+        self.muUser = [[[MUUser alloc] init] autorelease];
     }
     return self;
 }
@@ -33,14 +59,16 @@
 {
     if (self = [super initWithCoder:decoder])
     {
-        self.fbAccount = [decoder decodeObjectForKey:@"fbAccount"];
-        self.vkAccount = [decoder decodeObjectForKey:@"vkAccount"];
         self.meetup = [[MeetUp alloc] initWithSessionDelegate:self];
         [_meetup release];
         if (self.authkey)
         {
             _meetup.accessToken = authkey;
         }
+        [MUAccount setMUAccount:self];
+        self.fbAccount = [decoder decodeObjectForKey:@"fbAccount"];
+        self.vkAccount = [decoder decodeObjectForKey:@"vkAccount"];
+        self.muUser = [decoder decodeObjectForKey:@"muUser"];
     }
     return self;
 }
@@ -50,10 +78,12 @@
     [super encodeWithCoder:coder];
     [coder encodeObject:_fbAccount forKey:@"fbAccount"];
     [coder encodeObject:_vkAccount forKey:@"vkAccount"];
+    [coder encodeObject:_muUser forKey:@"muUser"];
 }
 
 -(void)dealloc
 {
+    self.muUser = nil;
     self.meetup = nil;
     self.userId = nil;
     self.fbAccount = nil;
@@ -148,6 +178,7 @@
 {
     self.authkey = _meetup.accessToken;
     self.userId = _meetup.userId;
+    self.muUser.uid = self.userId;
     if ([sessionDelegate respondsToSelector:@selector(didLogin)])
     {
         [sessionDelegate didLogin];

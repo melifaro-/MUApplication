@@ -30,6 +30,15 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder])
+    {
+        self.vkontakte = [VKAccount getInstance].vkontakte;
+    }
+    return self;
+}
+
 -(id)initWithResponse:(id)resp
 {
     if (self = [super init])
@@ -119,7 +128,8 @@
 {
     response = [response objectForKey:@"response"];
     response = [response objectAtIndex:0];
-    self.uid = [response objectForKey:@"uid"];
+    id parsedUId = [response objectForKey:@"uid"];
+    self.uid = [parsedUId isKindOfClass:[NSDecimalNumber class]] ? [parsedUId stringValue] : [NSString stringWithFormat:@"%@", parsedUId];
     self.name = [NSString stringWithFormat:@"%@ %@", [response objectForKey:@"first_name"], [response objectForKey:@"last_name"]];
     
     NSString *birthDayToString = [response objectForKey:@"bdate"];

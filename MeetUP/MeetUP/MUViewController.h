@@ -8,17 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "MUAccount.h"
+#import "MPUIView.h"
 
-@interface MUViewController : UIViewController <SNSessionDelegate>
+@interface MUViewController : MPUIView <SNSessionDelegate>
 {
     MUAccount               *_muAccount;
+    MUUser                  *_muUser;
 
     IBOutlet UITextField*   _loginTextField;
     IBOutlet UITextField*   _pswdTextField;
     IBOutlet UITextView*    _infoTextView;
 }
-
--(void)setData:(MUAccount*)account;
 
 -(IBAction)signupButtonTouched:(id)sender;
 -(IBAction)loginButtonTouched:(id)sender;
@@ -28,5 +28,9 @@
 
 -(IBAction)loginWithFBButtonTouched:(id)sender;
 -(IBAction)loginWithVKButtonTouched:(id)sender;
+
+-(IBAction)updateProfileButtonTouched:(id)sender;
+-(IBAction)userButtonTouched:(id)sender;
+-(IBAction)usersButtonTouched:(id)sender;
 
 @end

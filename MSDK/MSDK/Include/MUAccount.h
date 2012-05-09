@@ -12,19 +12,24 @@
 #import "RequestDelegates.h"
 #import "FBAccount.h"
 #import "VKAccount.h"
+#import "MUUser.h"
 
 @class MeetUp;
 
 @interface MUAccount : SNAccount <SNSessionDelegate , MURequestDelegate>
 {
+    MUUser*     _muUser;
     MeetUp*     _meetup;
     FBAccount*  _fbAccount;
     VKAccount*  _vkAccount;
 }
 
+@property (nonatomic, retain) MUUser    *muUser;
 @property (nonatomic, retain) FBAccount *fbAccount;
 @property (nonatomic, retain) VKAccount *vkAccount;
 @property (nonatomic, retain) MeetUp *meetup;
+
++ (MUAccount*)getInstance;
 
 -(BOOL)handleOpenURL:(NSURL *)url;
 
