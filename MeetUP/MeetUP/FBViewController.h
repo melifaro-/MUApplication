@@ -9,16 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "MUAccount.h"
 #import "FBUser.h"
+#import "MPUIView.h"
     
-@interface FBViewController : UIViewController <SNSessionDelegate, SNUserDelegate>
+@interface FBViewController : MPUIView <SNSessionDelegate, SNUserDelegate>
 {
     IBOutlet UITextView *myInfoTextView;
-    FBUser              *fbUser;
-    FBAccount           *fba;
+    FBUser              *_fbUser;
+    FBAccount           *_fba;
     MUAccount           *_muAccount;
 }
-
--(void)setData:(MUAccount*)account;
 
 -(IBAction)loginButtonTouched:(id)sender;
 -(IBAction)logoutButtonTouched:(id)sender;

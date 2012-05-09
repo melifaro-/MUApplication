@@ -29,7 +29,7 @@
 
 @end
 
-@interface SNUser : NSObject <SNUserProtocol>
+@interface SNUser : NSObject <SNUserProtocol, NSCoding>
 {
     id<SNUserDelegate>  userDelegate;
     NSString            *uid;

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MUAccount.h"
 #import "VKUser.h"
+#import "MPUIView.h"
 
-@interface VKViewController : UIViewController <SNSessionDelegate, SNUserDelegate>
+@interface VKViewController : MPUIView <SNSessionDelegate, SNUserDelegate>
 {
     IBOutlet UITextView *myTextView;
     IBOutlet UIImageView *myImage;
@@ -18,7 +19,6 @@
     VKAccount           *_vka;
     MUAccount           *_muAccount;
 }
--(void)setData:(MUAccount*)account;
 
 -(IBAction)loginButtonTouched:(id)sender;
 -(IBAction)getMeButtonTouched:(id)sender;

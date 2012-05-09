@@ -24,6 +24,42 @@
 @synthesize jobs;
 @synthesize friends;
 
+-(id)initWithCoder:(NSCoder *)decoder
+{
+    if (self = [super init])
+    {
+        self.uid = [decoder decodeObjectForKey:@"uid"];
+        self.name = [decoder decodeObjectForKey:@"name"];
+        self.birthday = [decoder decodeObjectForKey:@"birthday"];
+        self.sex = [decoder decodeObjectForKey:@"sex"];
+        self.photoUrl = [decoder decodeObjectForKey:@"photoUrl"];
+        self.photo = [decoder decodeObjectForKey:@"photo"];
+        self.status = [decoder decodeObjectForKey:@"status"];
+        self.location = [decoder decodeObjectForKey:@"location"];
+//        self.timezone = [decoder decodeObjectForKey:@"timezone"];
+        self.interests = [decoder decodeObjectForKey:@"interests"];
+        self.jobs = [decoder decodeObjectForKey:@"jobs"];
+        self.friends = [decoder decodeObjectForKey:@"friends"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:uid forKey:@"uid"];
+    [coder encodeObject:name forKey:@"name"];
+    [coder encodeObject:birthday forKey:@"birthday"];
+    [coder encodeObject:sex forKey:@"sex"];
+    [coder encodeObject:photoUrl forKey:@"photoUrl"];
+    [coder encodeObject:photo forKey:@"photo"];
+    [coder encodeObject:status forKey:@"status"];
+    [coder encodeObject:location forKey:@"location"];
+//    [coder encodeObject:timezone forKey:@"timezone"];
+    [coder encodeObject:interests forKey:@"interests"];
+    [coder encodeObject:jobs forKey:@"jobs"];
+    [coder encodeObject:friends forKey:@"friends"];
+}
+
 -(void)dealloc
 {
     self.uid = nil;

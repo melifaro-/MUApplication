@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SNAccount.h"
+#import "VKUser.h"
 #import "RequestDelegates.h"
 #import "SNSessionDelegate.h"
 
@@ -19,12 +20,14 @@
 @interface VKAccount : SNAccount <SNSessionDelegate, VKRequestDelegate, NSCoding>
 {
     Vkontakte   *vkontakte;
+    VKUser      *_vkUser;
 }
 
 @property (nonatomic, retain) Vkontakte *vkontakte;
-
-- (BOOL)handleOpenURL:(NSURL *)url;
+@property (nonatomic, retain) VKUser    *vkUser;
 
 + (VKAccount*)getInstance;
+
+- (BOOL)handleOpenURL:(NSURL *)url;
 
 @end

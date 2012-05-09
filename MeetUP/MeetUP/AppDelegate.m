@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import "UISplashViewController.h"
 
-//#define SDK_DEBUG
-
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -36,25 +34,6 @@
         [muAccount release];
     }
 
-#ifdef SDK_DEBUG
-    MUViewController* muvc = [[MUViewController alloc] initWithNibName:@"MUViewController" bundle:nil];
-    [muvc setData:muAccount];
-    muvc.title = @"MeetUP";
-    FBViewController* fbvc = [[FBViewController alloc] initWithNibName:@"FBViewController" bundle:nil];
-    [fbvc setData:muAccount];
-    fbvc.title = @"FB";
-    VKViewController* vkvc = [[VKViewController alloc] initWithNibName:@"VKViewController" bundle:nil];
-    [vkvc setData:muAccount];
-    vkvc.title = @"VK";
-    self.tabController = [[[UITabBarController alloc] init] autorelease];
-    self.tabController.viewControllers = [NSArray arrayWithObjects:muvc, fbvc, vkvc,  nil];
-    [muvc release];
-    [fbvc release];
-    [vkvc release];
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    self.window.rootViewController = self.tabController;
-    [self.window makeKeyAndVisible];
-#else
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     UISplashViewController *viewController = [[[UISplashViewController alloc] initWithNibName:@"MPUIView" bundle:nil] autorelease];
@@ -62,7 +41,6 @@
     self.navigationController.navigationBar.hidden = YES;
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
-#endif
 
     return YES;
 }
@@ -124,7 +102,7 @@
         return NO;
 }
 
-+(AppDelegate*)appDelegate
++(AppDelegate*)getInstance
 {
     return (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
