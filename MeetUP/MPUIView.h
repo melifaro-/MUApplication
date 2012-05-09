@@ -22,7 +22,7 @@
 @property (nonatomic, retain) UIButton* nextButton;
 
 - (IBAction)backButtonPressed:(id)sender;
-- (IBAction)nextNuttonPressed:(id)sender;
+- (IBAction)nextButtonPressed:(id)sender;
 - (void)layoutNavigationBar;
 
 @end

@@ -49,10 +49,10 @@
     sview.frame = CGRectMake(-240.0, 0, self.view.frame.size.width, self.view.frame.size.height);
     sview.backgroundColor = [UIColor clearColor];
     [self.view addSubview:sview];
-    UIMainView *middleView = [[[UIMainView alloc] initWithFrame:CGRectMake(240, 0, 100, 100)] autorelease];
+    UIMainView *middleView = [[[UIMainView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
     [sview setMiddleView:middleView];
-    UIMenuView *leftView = [[[UIMenuView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
-    [sview setLeftView:leftView];
+  //  UIMenuView *leftView = [[[UIMenuView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
+   // [sview setLeftView:leftView];
 }
 
 - (void)viewDidUnload

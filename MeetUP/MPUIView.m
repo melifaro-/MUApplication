@@ -63,7 +63,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)nextNuttonPressed:(id)sender
+- (IBAction)nextButtonPressed:(id)sender
 {
 
 }

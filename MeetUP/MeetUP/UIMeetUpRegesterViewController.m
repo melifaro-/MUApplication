@@ -106,7 +106,7 @@
     photo.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 }
 
--(IBAction)nextNuttonPressed:(id)sender
+-(IBAction)nextButtonPressed:(id)sender
 {
     //[_muAccount signup:_loginTextField.text withPassword:_pswdTextField.text];
     UIMainScreenViewController *viewController = [[[UIMainScreenViewController alloc] initWithNibName:@"UIMainScreenViewController" bundle:nil] autorelease];

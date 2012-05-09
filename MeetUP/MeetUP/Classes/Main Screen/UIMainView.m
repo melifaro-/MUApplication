@@ -21,8 +21,6 @@
         [viewController release];
         UIView* navbarView = [mpuiView.view.subviews objectAtIndex:0];
         [self addSubview:navbarView];
-       // id nextObject;
-        NSEnumerator* enumerator = [navbarView.subviews objectEnumerator];
         
         for (id nextObject in navbarView.subviews)
         {
@@ -57,6 +55,11 @@
 - (void) backButtonPressed:(id)sender
 {
     [self.superview toLeftView];
+}
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.superview toMiddleView];
 }
 
 @end
