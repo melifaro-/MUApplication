@@ -8,6 +8,7 @@
 
 #import "UIMeetUpRegesterViewController.h"
 #import "AppDelegate.h"
+#import "UIMainScreenViewController.h"
 
 @implementation UIMeetUpRegesterViewController
 @synthesize photo;
@@ -107,12 +108,16 @@
 
 -(IBAction)nextNuttonPressed:(id)sender
 {
-    [_muAccount signup:_loginTextField.text withPassword:_pswdTextField.text];
+    //[_muAccount signup:_loginTextField.text withPassword:_pswdTextField.text];
+    UIMainScreenViewController *viewController = [[[UIMainScreenViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didLogin
 {
     NSLog(@"did login");
+    UIMainScreenViewController *viewController = [[[UIMainScreenViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didNotLogin:(BOOL)cancelled

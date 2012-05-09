@@ -20,6 +20,8 @@
 		C06C96E81551C3C6007664B2 /* VKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C96E21551C3C6007664B2 /* VKViewController.m */; };
 		C06C96E91551C3C6007664B2 /* VKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06C96E31551C3C6007664B2 /* VKViewController.xib */; };
 		C07454B31551E2FD00A53EAC /* libMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07454B01551E2EC00A53EAC /* libMSDK.a */; };
+		F30AEF84155A62E10062AAE0 /* UIMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30AEF83155A62E10062AAE0 /* UIMainScreenViewController.m */; };
+		F30AEF87155A633D0062AAE0 /* UIMainScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30AEF86155A633D0062AAE0 /* UIMainScreenViewController.xib */; };
 		F3F49D501556F0AE00579116 /* UIRegesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D481556F0AE00579116 /* UIRegesterViewController.m */; };
 		F3F49D511556F0AE00579116 /* MPUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D4A1556F0AE00579116 /* MPUIView.m */; };
 		F3F49D521556F0AE00579116 /* MPUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F49D4B1556F0AE00579116 /* MPUIView.xib */; };
@@ -69,6 +71,9 @@
 		C06C96E21551C3C6007664B2 /* VKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKViewController.m; path = MeetUP/VKViewController.m; sourceTree = "<group>"; };
 		C06C96E31551C3C6007664B2 /* VKViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VKViewController.xib; path = MeetUP/VKViewController.xib; sourceTree = "<group>"; };
 		C07454A71551E2EB00A53EAC /* MSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MSDK.xcodeproj; path = ../MSDK/MSDK.xcodeproj; sourceTree = "<group>"; };
+		F30AEF82155A62E10062AAE0 /* UIMainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMainScreenViewController.h; sourceTree = "<group>"; };
+		F30AEF83155A62E10062AAE0 /* UIMainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMainScreenViewController.m; sourceTree = "<group>"; };
+		F30AEF86155A633D0062AAE0 /* UIMainScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMainScreenViewController.xib; sourceTree = "<group>"; };
 		F3F49D471556F0AE00579116 /* UIRegesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRegesterViewController.h; sourceTree = "<group>"; };
 		F3F49D481556F0AE00579116 /* UIRegesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRegesterViewController.m; sourceTree = "<group>"; };
 		F3F49D491556F0AE00579116 /* MPUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUIView.h; sourceTree = "<group>"; };
@@ -157,6 +162,7 @@
 		C07454C61551E3E100A53EAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F30AEF81155A62A20062AAE0 /* Main Screen */,
 				F3F49D5B15572F8000579116 /* Splash */,
 				F3F49D5A15572F6600579116 /* Regester */,
 				F3F49D491556F0AE00579116 /* MPUIView.h */,
@@ -168,11 +174,29 @@
 		C07454C71551E3F600A53EAC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F30AEF85155A63130062AAE0 /* Main Screen */,
 				F3F49D5915572F4E00579116 /* Splash */,
 				F3F49D5815572F3100579116 /* Regester */,
 				F3F49D4B1556F0AE00579116 /* MPUIView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		F30AEF81155A62A20062AAE0 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F30AEF82155A62E10062AAE0 /* UIMainScreenViewController.h */,
+				F30AEF83155A62E10062AAE0 /* UIMainScreenViewController.m */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		F30AEF85155A63130062AAE0 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F30AEF86155A633D0062AAE0 /* UIMainScreenViewController.xib */,
+			);
+			name = "Main Screen";
 			sourceTree = "<group>";
 		};
 		F3F49D5815572F3100579116 /* Regester */ = {
@@ -296,6 +320,7 @@
 				F3F49D541556F0AE00579116 /* UISplashViewController.xib in Resources */,
 				F3F49D551556F0AE00579116 /* UIRegesterViewController.xib in Resources */,
 				F3F49D601557D01B00579116 /* UIMeetUpRegesterViewController.xib in Resources */,
+				F30AEF87155A633D0062AAE0 /* UIMainScreenViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +340,7 @@
 				F3F49D511556F0AE00579116 /* MPUIView.m in Sources */,
 				F3F49D531556F0AE00579116 /* UISplashViewController.m in Sources */,
 				F3F49D5E1557CFEA00579116 /* UIMeetUpRegesterViewController.m in Sources */,
+				F30AEF84155A62E10062AAE0 /* UIMainScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
