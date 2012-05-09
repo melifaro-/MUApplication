@@ -18,7 +18,7 @@
 
 @interface MUAccount : SNAccount <SNSessionDelegate , MURequestDelegate>
 {
-    MUUser*     _user;
+    MUUser*     _muUser;
     MeetUp*     _meetup;
     FBAccount*  _fbAccount;
     VKAccount*  _vkAccount;
