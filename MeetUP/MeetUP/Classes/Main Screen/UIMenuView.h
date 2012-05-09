@@ -1,5 +1,5 @@
 //
-//  UIMainScreenViewController.h
+//  UIMenuView.h
 //  MeetUP
 //
 //  Created by Alexander Petrovichev on 5/9/12.
@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MPUIView.h"
 
-@interface UIMainScreenViewController : UIViewController
+@interface UIMenuView : UIView <UITableViewDataSource, UITableViewDelegate>
+{
+    UITableView* menu;
+}
 
 @end

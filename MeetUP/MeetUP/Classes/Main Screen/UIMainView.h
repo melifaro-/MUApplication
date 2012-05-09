@@ -1,5 +1,5 @@
 //
-//  UIMainScreenViewController.h
+//  UIMainView.h
 //  MeetUP
 //
 //  Created by Alexander Petrovichev on 5/9/12.
@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MPUIView.h"
 
-@interface UIMainScreenViewController : UIViewController
+@interface UIMainView : UIView
+{
+    MPUIView *mpuiView;
+}
+@property (nonatomic, retain) MPUIView* mpuiView;
 
 @end

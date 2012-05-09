@@ -109,15 +109,13 @@
 -(IBAction)nextNuttonPressed:(id)sender
 {
     //[_muAccount signup:_loginTextField.text withPassword:_pswdTextField.text];
-    UIMainScreenViewController *viewController = [[[UIMainScreenViewController alloc] init] autorelease];
+    UIMainScreenViewController *viewController = [[[UIMainScreenViewController alloc] initWithNibName:@"UIMainScreenViewController" bundle:nil] autorelease];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didLogin
 {
     NSLog(@"did login");
-    UIMainScreenViewController *viewController = [[[UIMainScreenViewController alloc] init] autorelease];
-    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didNotLogin:(BOOL)cancelled

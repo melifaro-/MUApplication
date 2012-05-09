@@ -7,6 +7,9 @@
 //
 
 #import "UIMainScreenViewController.h"
+#import "SplitView.h"
+#import "UIMainView.h"
+#import "UIMenuView.h"
 
 @implementation UIMainScreenViewController
 
@@ -40,17 +43,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray* array = [[NSBundle mainBundle] loadNibNamed:@"UIMainScreenViewController" owner:self options:nil];
-    UIView* sview = [array objectAtIndex:0];
+    NSArray* array = [[NSBundle mainBundle] loadNibNamed:@"SplitView" owner:self options:nil];
+    SplitView* sview = [array objectAtIndex:0];
     sview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    sview.frame = CGRectMake(0, 0, self.viewContent.frame.size.width, self.viewContent.frame.size.height);
+    sview.frame = CGRectMake(-240.0, 0, self.view.frame.size.width, self.view.frame.size.height);
     sview.backgroundColor = [UIColor clearColor];
-    self.navBar.hidden = NO;
-    self.backButton.hidden = NO;
-    self.nextButton.hidden = NO;
-    self.title = @"MeetUP";
-    [self layoutNavigationBar];
-    [self.viewContent addSubview:sview];
+    [self.view addSubview:sview];
+    UIMainView *middleView = [[[UIMainView alloc] initWithFrame:CGRectMake(240, 0, 100, 100)] autorelease];
+    [sview setMiddleView:middleView];
+    UIMenuView *leftView = [[[UIMenuView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
+    [sview setLeftView:leftView];
 }
 
 - (void)viewDidUnload

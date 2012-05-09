@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  MSDK
+//  MeetUP
 //
 //  Created by Alexander Petrovichev on 4/9/12.
 //  Copyright (c) 2012 apetrovichev@me.com. All rights reserved.
