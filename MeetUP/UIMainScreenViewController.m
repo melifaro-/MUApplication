@@ -43,16 +43,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray* array = [[NSBundle mainBundle] loadNibNamed:@"SplitView" owner:self options:nil];
-    SplitView* sview = [array objectAtIndex:0];
-    sview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    sview.frame = CGRectMake(-240.0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    sview.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:sview];
+    SplitView *splitView = [[SplitView alloc] initWithFrame:CGRectMake(-240, 0, 800, 460)];
+    [self.view addSubview:splitView];
     UIMainView *middleView = [[[UIMainView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
-    [sview setMiddleView:middleView];
-  //  UIMenuView *leftView = [[[UIMenuView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
-   // [sview setLeftView:leftView];
+    [splitView setMiddleView:middleView];;
+    UIMenuView *leftView = [[[UIMenuView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
+    [splitView setLeftView:leftView];
+    [splitView release];
 }
 
 - (void)viewDidUnload
