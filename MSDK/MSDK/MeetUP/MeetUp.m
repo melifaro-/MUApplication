@@ -52,7 +52,7 @@ static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
 {
     if ([self isSessionValid])
     {
-        [params setValue:self.accessToken forKey:@"access_token"];
+        [params setValue:self.accessToken forKey:@"key"];
     }
 
     MURequest* _request = [MURequest getRequestWithParams:params
@@ -71,7 +71,7 @@ static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
                                    password, @"password",
                                    @"true", @"signup",
                                    nil];
-    _loginRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"GET" andDelegate:self];
+    _loginRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"POST" andDelegate:self];
 }
 
 -(void)login:(NSString*)login withPassword:(NSString*)password
@@ -81,7 +81,7 @@ static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
                                    password, @"password",
                                    @"false", @"signup",
                                    nil];
-    _loginRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"GET" andDelegate:self];
+    _loginRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"POST" andDelegate:self];
 }
 
 -(void)loginWithSNAccount:(SNAccount*)snAccount
@@ -89,18 +89,12 @@ static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    snAccount.snType, @"provider",
                                    nil];
-    if([snAccount authkey])
-    {
-        [params setObject:snAccount.authkey forKey:@"key"];
-    }
-    _snLoginRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"GET" andDelegate:self];
+    _snLoginRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"POST" andDelegate:self];
 }
 
 - (void)logout
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   self.accessToken, @"key",
-                                   nil];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
     _logoutRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"DELETE" andDelegate:self];
 }
 

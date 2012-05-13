@@ -83,7 +83,7 @@
 
 -(IBAction)updateProfileButtonTouched:(id)sender
 {
-
+    [_muUser updateProfile];
 }
 
 -(IBAction)userButtonTouched:(id)sender

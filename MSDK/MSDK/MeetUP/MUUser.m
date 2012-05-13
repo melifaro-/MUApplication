@@ -40,15 +40,15 @@
 -(void)updateProfile
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"1,1", @"location",
+                                   @"0,0", @"location",
                                    nil];
-    _updateProfileRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"GET" andDelegate:self];
+    _updateProfileRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"PUT" andDelegate:self];
 }
 
 -(void)getNearbyUsers
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"1,1", @"center",
+                                   @"0,0", @"center",
                                    @"5000", @"radius",
                                    nil];
     _nearbayUsersRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"GET" andDelegate:self];
@@ -57,9 +57,8 @@
 -(void)getUserById:(NSString *)userId
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   userId, @"uid",
                                    nil];
-    _userRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"GET" andDelegate:self];
+    _userRequest = [_meetup requestWithMethodName:[NSString stringWithFormat:@"users/%@", userId] andParams:params andHttpMethod:@"GET" andDelegate:self];
 }
 
 #pragma mark - VKRequest Delegate Methods

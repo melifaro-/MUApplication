@@ -100,12 +100,9 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
 - (NSMutableData *)generatePostBody
 {
     NSMutableData *body = [NSMutableData data];
-    //    NSString *endLine = [NSString stringWithFormat:@"\r\n--%@\r\n", kStringBoundary];
     NSMutableDictionary *dataDictionary = [NSMutableDictionary dictionary];
-    
-    //    [self utfAppendBody:body data:[NSString stringWithFormat:@"--%@\r\n", kStringBoundary]];
-    
-    for (id key in [_params keyEnumerator])
+    NSMutableArray* pairs = [NSMutableArray array];
+    for (NSString* key in [_params keyEnumerator])
     {
         if (([[_params objectForKey:key] isKindOfClass:[UIImage class]])
             ||([[_params objectForKey:key] isKindOfClass:[NSData class]]))
@@ -114,46 +111,18 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
             continue;
         }
         
-        [self utfAppendBody:body
-                       data:[NSString
-                             stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",
-                             key]];
-        [self utfAppendBody:body data:[_params objectForKey:key]];
+        NSString* escaped_value = (NSString *)CFURLCreateStringByAddingPercentEscapes(
+                                                                                      NULL, /* allocator */
+                                                                                      (CFStringRef)[_params objectForKey:key],
+                                                                                      NULL, /* charactersToLeaveUnescaped */
+                                                                                      (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                      kCFStringEncodingUTF8);
         
-        //        [self utfAppendBody:body data:endLine];
+        [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, escaped_value]];
+        [escaped_value release];
     }
-    
-    if ([dataDictionary count] > 0) 
-    {
-        for (id key in dataDictionary)
-        {
-            NSObject *dataParam = [dataDictionary objectForKey:key];
-            if ([dataParam isKindOfClass:[UIImage class]])
-            {
-                NSData* imageData = UIImagePNGRepresentation((UIImage*)dataParam);
-                [self utfAppendBody:body
-                               data:[NSString stringWithFormat:
-                                     @"Content-Disposition: form-data; filename=\"%@\"\r\n", key]];
-                [self utfAppendBody:body
-                               data:[NSString stringWithString:@"Content-Type: image/png\r\n\r\n"]];
-                [body appendData:imageData];
-            }
-            else
-            {
-                NSAssert([dataParam isKindOfClass:[NSData class]],
-                         @"dataParam must be a UIImage or NSData");
-                [self utfAppendBody:body
-                               data:[NSString stringWithFormat:
-                                     @"Content-Disposition: form-data; filename=\"%@\"\r\n", key]];
-                [self utfAppendBody:body
-                               data:[NSString stringWithString:@"Content-Type: content/unknown\r\n\r\n"]];
-                [body appendData:(NSData*)dataParam];
-            }
-            //            [self utfAppendBody:body data:endLine];
-            
-        }
-    }
-    
+    NSString* query = [pairs componentsJoinedByString:@"&"];
+    [self utfAppendBody:body data:query];
     return body;
 }
 
@@ -312,11 +281,8 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
     
     
     [request setHTTPMethod:self.httpMethod];
-    if ([self.httpMethod isEqualToString: @"POST"])
+    if ([self.httpMethod isEqualToString: @"POST"] || [self.httpMethod isEqualToString: @"DELETE"]|| [self.httpMethod isEqualToString: @"PUT"])
     {
-//        NSString* contentType = [NSString
-//                                 stringWithFormat:@"multipart/form-data;"];
-//        [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
         [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
         NSData* postData = [self generatePostBody];
         [request setHTTPBody:postData];
