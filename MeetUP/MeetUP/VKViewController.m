@@ -7,7 +7,7 @@
 //
 
 #import "VKViewController.h"
-#import "AppDelegate.h"
+#import "MUAccount.h"
 
 @interface VKViewController(private)
 
@@ -19,7 +19,7 @@
 
 -(void)initMeetUpInstances
 {
-    _muAccount = [AppDelegate getInstance].muAccount;
+    _muAccount = [MUAccount sharedMUAccount];
     _vka = _muAccount.vkAccount;
     [_vka setSessionDelegate:self];
     _user = _vka.vkUser;

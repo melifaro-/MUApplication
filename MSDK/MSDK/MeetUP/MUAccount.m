@@ -11,23 +11,7 @@
 
 #define MUACCOUNT_FILE @"muaccount"
 
-static MUAccount* _muAccount = nil;
-
-@interface MUAccount(private)
-
-+(void)setMUAccount:(MUAccount*)muAccount;
-
-@end
-
-@implementation  MUAccount(private)
-
-+(void)setMUAccount:(MUAccount*)muAccount
-{
-    [_muAccount release];
-    _muAccount = muAccount;
-}
-
-@end
+static MUAccount* sharedMUAccount = nil;
 
 @implementation MUAccount
 
@@ -36,16 +20,24 @@ static MUAccount* _muAccount = nil;
 @synthesize fbAccount = _fbAccount;
 @synthesize vkAccount = _vkAccount;
 
-+ (MUAccount*)getInstance
++ (MUAccount*)sharedMUAccount
 {
-    return _muAccount;
+    if (!sharedMUAccount)
+    {
+        sharedMUAccount = [MUAccount restore];
+        if (!sharedMUAccount)
+        {
+            sharedMUAccount = [[MUAccount alloc] init];
+        }
+    }
+    return sharedMUAccount;
 }
 
 -(id)init
 {
     if (self = [super init])
     {
-        [MUAccount setMUAccount:self];
+        sharedMUAccount = self;
         self.meetup = [[[MeetUp alloc] init] autorelease];
         [_meetup setSessionDelegate:self];
         self.fbAccount = [[[FBAccount alloc] init] autorelease];
@@ -59,13 +51,14 @@ static MUAccount* _muAccount = nil;
 {
     if (self = [super initWithCoder:decoder])
     {
+        sharedMUAccount = self;
         self.meetup = [[MeetUp alloc] initWithSessionDelegate:self];
         [_meetup release];
         if (self.authkey)
         {
             _meetup.accessToken = authkey;
         }
-        [MUAccount setMUAccount:self];
+
         self.fbAccount = [decoder decodeObjectForKey:@"fbAccount"];
         self.vkAccount = [decoder decodeObjectForKey:@"vkAccount"];
         self.muUser = [decoder decodeObjectForKey:@"muUser"];

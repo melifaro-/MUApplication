@@ -18,7 +18,7 @@
 {
     if (self = [super init])
     {
-        self.meetup = [MUAccount getInstance].meetup;
+        self.meetup = [MUAccount sharedMUAccount].meetup;
     }
     return self;
 }
@@ -27,7 +27,7 @@
 {
     if (self = [super initWithCoder:decoder])
     {
-        self.meetup = [MUAccount getInstance].meetup;
+        self.meetup = [MUAccount sharedMUAccount].meetup;
     }
     return self;
 }

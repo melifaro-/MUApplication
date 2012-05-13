@@ -29,7 +29,7 @@
 @property (nonatomic, retain) VKAccount *vkAccount;
 @property (nonatomic, retain) MeetUp *meetup;
 
-+ (MUAccount*)getInstance;
++ (MUAccount*)sharedMUAccount;
 
 -(BOOL)handleOpenURL:(NSURL *)url;
 

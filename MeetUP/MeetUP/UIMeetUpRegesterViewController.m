@@ -7,7 +7,7 @@
 //
 
 #import "UIMeetUpRegesterViewController.h"
-#import "AppDelegate.h"
+#import "MUAccount.h"
 #import "UIMainScreenViewController.h"
 
 @implementation UIMeetUpRegesterViewController
@@ -18,7 +18,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        _muAccount = [AppDelegate getInstance].muAccount;
+        _muAccount = [MUAccount sharedMUAccount];
     }
     return self;
 }

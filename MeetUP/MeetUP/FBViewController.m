@@ -7,7 +7,7 @@
 //
 
 #import "FBViewController.h"
-#import "AppDelegate.h"
+#import "MUAccount.h"
 
 @interface FBViewController(private)
 
@@ -19,7 +19,7 @@
 
 -(void)initMeetUpInstances
 {
-    _muAccount = [AppDelegate getInstance].muAccount;
+    _muAccount = [MUAccount sharedMUAccount];
     _fba = _muAccount.fbAccount;
     [_fba setSessionDelegate:self];
 }

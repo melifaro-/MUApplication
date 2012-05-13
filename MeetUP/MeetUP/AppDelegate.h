@@ -10,14 +10,10 @@
 #import "MUAccount.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-{
-    MUAccount *muAccount;
-}
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) UITabBarController *tabController;
-@property (nonatomic, retain) MUAccount *muAccount;
 
 +(AppDelegate*)getInstance;
 

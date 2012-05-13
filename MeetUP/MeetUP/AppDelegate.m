@@ -13,12 +13,10 @@
 
 @synthesize window = _window;
 @synthesize tabController;
-@synthesize muAccount;
 @synthesize navigationController = _navigationController;
 
 - (void)dealloc
 {
-    self.muAccount = nil;
     [_window release];
     [_navigationController release];
     [super dealloc];
@@ -26,14 +24,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //test change
-    self.muAccount = [MUAccount restore];
-    if (!self.muAccount)
-    {
-        self.muAccount = [[MUAccount alloc] init];
-        [muAccount release];
-    }
-
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     UISplashViewController *viewController = [[[UISplashViewController alloc] initWithNibName:@"MPUIView" bundle:nil] autorelease];
@@ -87,7 +77,7 @@
 // Pre iOS 4.2 support
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    if([muAccount handleOpenURL:url])
+    if([[MUAccount sharedMUAccount] handleOpenURL:url])
         return YES;
     else
         return NO;
@@ -96,7 +86,7 @@
 // For iOS 4.2+ support
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    if([muAccount handleOpenURL:url])
+    if([[MUAccount sharedMUAccount] handleOpenURL:url])
         return YES;
     else
         return NO;

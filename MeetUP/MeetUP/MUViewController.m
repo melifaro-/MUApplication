@@ -7,7 +7,7 @@
 //
 
 #import "MUViewController.h"
-#import "AppDelegate.h"
+#import "MUAccount.h"
 
 @interface MUViewController(private)
 
@@ -19,7 +19,7 @@
 
 -(void)initMeetUpInstances
 {
-    _muAccount = [AppDelegate getInstance].muAccount;
+    _muAccount = [MUAccount sharedMUAccount];
     [_muAccount setSessionDelegate:self];
     _muUser = _muAccount.muUser;
 }

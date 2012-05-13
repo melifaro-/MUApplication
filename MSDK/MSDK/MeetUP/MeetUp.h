@@ -20,6 +20,7 @@
     NSString* _userId;
 
     MURequest*  _loginRequest;
+    //to do: implement
     MURequest*  _snLoginRequest;
     MURequest*  _logoutRequest;
 }
