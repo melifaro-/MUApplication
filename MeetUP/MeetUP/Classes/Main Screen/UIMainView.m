@@ -7,6 +7,7 @@
 //
 
 #import "UIMainView.h"
+#import "SplitView.h"
 
 @implementation UIMainView
 @synthesize mpuiView;
@@ -49,17 +50,17 @@
 
 - (void) nextButtonPressed:(id)sender
 {
-    [self.superview toRightView];
+    [(SplitView*)self.superview toRigthView];
 }
 
 - (void) backButtonPressed:(id)sender
 {
-    [self.superview toLeftView];
+    [(SplitView*)self.superview toLeftView];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.superview toMiddleView];
+    [(SplitView*)self.superview toMiddleView];
 }
 
 @end
