@@ -35,6 +35,7 @@
 -(void)dealloc
 {
     self.meetup = nil;
+    [super dealloc];
 }
 
 -(void)updateProfile
