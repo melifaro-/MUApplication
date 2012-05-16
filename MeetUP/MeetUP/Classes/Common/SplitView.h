@@ -19,7 +19,7 @@
 @property(nonatomic, retain) UIView* rightView;
 
 - (void)toLeftView;
-- (void)toRigthView;
+- (void)toRightView;
 - (void)toMiddleView;
 
 @end

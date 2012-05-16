@@ -50,7 +50,7 @@
 
 - (void) nextButtonPressed:(id)sender
 {
-    [(SplitView*)self.superview toRigthView];
+    [(SplitView*)self.superview toRightView];
 }
 
 - (void) backButtonPressed:(id)sender
