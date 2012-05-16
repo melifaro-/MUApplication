@@ -40,5 +40,7 @@
  */
 - (void)sessionInvalidated;
 
+- (void)didFailWithErrors:(NSError*)error;
+
 @end
 

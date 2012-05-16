@@ -67,6 +67,10 @@
 -(void)request:(MURequest *)request didFailWithError:(NSError *)error
 {
     NSLog(@"request did fail with errors:\n %@", error);
+    if ([self.userDelegate respondsToSelector:@selector(didFailWithErrors:)])
+    {
+        [self.userDelegate didFailWithErrors:error];
+    }
 }
 
 -(void)request:(MURequest *)request didLoad:(id)result

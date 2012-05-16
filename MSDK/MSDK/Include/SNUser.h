@@ -17,6 +17,7 @@
 -(void)didUserReceived;
 -(void)didUserFriendsReceived;
 -(void)didPhotoReceived;
+-(void)didFailWithErrors:(NSError*)error;
 
 @end
 

@@ -138,6 +138,11 @@ static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
 -(void)request:(MURequest *)request didFailWithError:(NSError *)error
 {
     NSLog(@"request did fail with errors:\n %@", error);
+
+    if ([self.sessionDelegate respondsToSelector:@selector(didFailWithErrors:)])
+    {
+        [self.sessionDelegate didFailWithErrors:error];
+    }
 }
 
 -(void)request:(MURequest *)request didLoad:(id)result
@@ -146,7 +151,6 @@ static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
     NSLog(@"result:\n %@", result);
     if (request == _loginRequest)
     {
-//        id dataObject = [result objectForKey:@"data"];
         self.userId = [result objectForKey:@"user_id"];
         self.accessToken = [result objectForKey:@"key"];
         if ([self isSessionValid])

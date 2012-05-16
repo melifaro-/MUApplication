@@ -97,7 +97,7 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
 /**
  * Generate body for POST method
  */
-- (NSMutableData *)generatePostBody
+- (NSMutableData *)generateRequestBody
 {
     NSMutableData *body = [NSMutableData data];
     NSMutableDictionary *dataDictionary = [NSMutableDictionary dictionary];
@@ -167,39 +167,15 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
     
     if ([result isKindOfClass:[NSDictionary class]])
     {
-        if ([result objectForKey:@"error"] != nil)
+        if ([result objectForKey:@"code"] != nil && [[result objectForKey:@"code"] intValue] == 1)
         {
+            //to do: parse error and pass parsed object
             if (error != nil)
             {
                 *error = [self formError:kGeneralErrorCode
                                 userInfo:result];
             }
             return nil;
-        }
-        
-        if ([result objectForKey:@"error_code"] != nil)
-        {
-            if (error != nil)
-            {
-                *error = [self formError:[[result objectForKey:@"error_code"] intValue] userInfo:result];
-            }
-            return nil;
-        }
-        
-        if ([result objectForKey:@"error_msg"] != nil)
-        {
-            if (error != nil)
-            {
-                *error = [self formError:kGeneralErrorCode userInfo:result];
-            }
-        }
-        
-        if ([result objectForKey:@"error_reason"] != nil)
-        {
-            if (error != nil)
-            {
-                *error = [self formError:kGeneralErrorCode userInfo:result];
-            }
         }
     }
     
@@ -284,7 +260,7 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
     if ([self.httpMethod isEqualToString: @"POST"] || [self.httpMethod isEqualToString: @"DELETE"]|| [self.httpMethod isEqualToString: @"PUT"])
     {
         [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        NSData* postData = [self generatePostBody];
+        NSData* postData = [self generateRequestBody];
         [request setHTTPBody:postData];
         [request setValue:[NSString stringWithFormat:@"%d", postData.length] forHTTPHeaderField:@"Content-Length"];
     }

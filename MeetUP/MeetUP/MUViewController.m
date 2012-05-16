@@ -49,6 +49,7 @@
 -(IBAction)loginButtonTouched:(id)sender
 {
     [_muAccount login:_loginTextField.text withPassword:_pswdTextField.text];
+    [_pswdTextField resignFirstResponder];
 }
 
 -(IBAction)loginWithFBButtonTouched:(id)sender
@@ -114,6 +115,11 @@
 - (void)sessionInvalidated
 {
     [_infoTextView setText:@"sessionInvalidated"];
+}
+
+- (void)didFailWithErrors:(NSError *)error
+{
+    [_infoTextView setText:[error description]];
 }
 
 - (void)viewDidLoad

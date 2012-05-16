@@ -194,5 +194,12 @@ static MUAccount* sharedMUAccount = nil;
     [sessionDelegate sessionInvalidated];
 }
 
+- (void)didFailWithErrors:(NSError *)error
+{
+    if ([sessionDelegate respondsToSelector:@selector(didFailWithErrors:)])
+    {
+        [sessionDelegate didFailWithErrors:error];
+    }
+}
 
 @end
