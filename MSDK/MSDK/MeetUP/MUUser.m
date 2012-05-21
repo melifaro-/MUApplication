@@ -9,10 +9,12 @@
 #import "MUUser.h"
 #import "MeetUp.h"
 #import "MUAccount.h"
+#define SEARCH_RADIUS   @"5000"
 
 @implementation MUUser
 
 @synthesize meetup = _meetup;
+@synthesize lastFix = _lastFix;
 
 -(id)init
 {
@@ -35,24 +37,32 @@
 -(void)dealloc
 {
     self.meetup = nil;
+    self.lastFix = nil;
     [super dealloc];
 }
 
 -(void)updateProfile
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"0,0", @"location",
-                                   nil];
-    _updateProfileRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"PUT" andDelegate:self];
+    if (_lastFix)
+    {
+        NSLog(@"%@", [NSString stringWithFormat:@"%f,%f", _lastFix.coordinate.latitude, _lastFix.coordinate.longitude]);
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                      [NSString stringWithFormat:@"%f,%f", _lastFix.coordinate.latitude, _lastFix.coordinate.longitude] , @"location",
+                                      nil];
+        _updateProfileRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"PUT" andDelegate:self];        
+    }
 }
 
 -(void)getNearbyUsers
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"0,0", @"center",
-                                   @"5000", @"radius",
-                                   nil];
-    _nearbayUsersRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"GET" andDelegate:self];
+    if (_lastFix)
+    {
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       [NSString stringWithFormat:@"%f,%f", _lastFix.coordinate.latitude, _lastFix.coordinate.longitude], @"center",
+                                       SEARCH_RADIUS, @"radius",
+                                       nil];
+        _nearbayUsersRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"GET" andDelegate:self];
+    }
 }
 
 -(void)getUserById:(NSString *)userId

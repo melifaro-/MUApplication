@@ -13,13 +13,13 @@
 #import "FBAccount.h"
 #import "VKAccount.h"
 #import "MUUser.h"
-//#import <CoreLocation/CoreLocation.h>
 
 @class MeetUp;
+@class CLLocationManager;
 
 @interface MUAccount : SNAccount <SNSessionDelegate , MURequestDelegate, CLLocationManagerDelegate>
 {
-//    CLLocationManager*  locationManager;
+    CLLocationManager*  locationManager;
     
     MUUser*     _muUser;
     MeetUp*     _meetup;

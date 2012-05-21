@@ -8,6 +8,7 @@
 
 #import "MUAccount.h"
 #import "MeetUp.h"
+#import <CoreLocation/CoreLocation.h>
 
 #define MUACCOUNT_FILE @"muaccount"
 
@@ -29,25 +30,26 @@ static MUAccount* sharedMUAccount = nil;
         {
             sharedMUAccount = [[MUAccount alloc] init];
         }
+        [sharedMUAccount startGPSTracking];
     }
     return sharedMUAccount;
 }
 
-//-(void)initializeGPSTracking
-//{
-//    // Create the location manager if this object does not
-//    // already have one.
-//    if (nil == locationManager)
-//        locationManager = [[CLLocationManager alloc] init];
-//    
-//    locationManager.delegate = self;
-//    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-//    
-//    // Set a movement threshold for new events.
-//    locationManager.distanceFilter = 500;
-//    
-//    [locationManager startUpdatingLocation];
-//}
+-(void)startGPSTracking
+{
+    // Create the location manager if this object does not
+    // already have one.
+    if (nil == locationManager)
+        locationManager = [[CLLocationManager alloc] init];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    
+    // Set a movement threshold for new events.
+    locationManager.distanceFilter = 500;
+    
+    [locationManager startUpdatingLocation];
+}
 
 -(id)init
 {
@@ -222,6 +224,11 @@ static MUAccount* sharedMUAccount = nil;
 	didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+    if (_muUser)
+    {
+        [_muUser setLastFix:newLocation];
+        [_muUser updateProfile];
+    }
     NSLog(@"newLocation %@", newLocation);
 }
 

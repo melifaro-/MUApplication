@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88153834156A9B560033EF68 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88153833156A9B560033EF68 /* CoreLocation.framework */; };
 		C06C97311551C8D6007664B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06C97301551C8D6007664B2 /* Foundation.framework */; };
 		C06C977F1551C928007664B2 /* SNAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C973E1551C928007664B2 /* SNAccount.m */; };
 		C06C97801551C928007664B2 /* SNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C06C973F1551C928007664B2 /* SNUser.m */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88153833156A9B560033EF68 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C06C972D1551C8D6007664B2 /* libMSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06C97301551C8D6007664B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C06C97341551C8D6007664B2 /* MSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MSDK-Prefix.pch"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88153834156A9B560033EF68 /* CoreLocation.framework in Frameworks */,
 				C07454C01551E34600A53EAC /* libfacebook_ios_sdk.a in Frameworks */,
 				C06C97311551C8D6007664B2 /* Foundation.framework in Frameworks */,
 			);
@@ -127,6 +130,7 @@
 		C06C972F1551C8D6007664B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88153833156A9B560033EF68 /* CoreLocation.framework */,
 				C06C97301551C8D6007664B2 /* Foundation.framework */,
 			);
 			name = Frameworks;
