@@ -10,6 +10,7 @@
 #import "SplitView.h"
 #import "UIMainView.h"
 #import "UIMenuView.h"
+#import "UIMainPreferencesView.h"
 
 @implementation UIMainScreenViewController
 
@@ -49,6 +50,8 @@
     [splitView setMiddleView:middleView];;
     UIMenuView *leftView = [[[UIMenuView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
     [splitView setLeftView:leftView];
+    UIMainPreferencesView *rightView = [[[UIMainPreferencesView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
+    [splitView setRightView:rightView];
     [splitView release];
 }
 

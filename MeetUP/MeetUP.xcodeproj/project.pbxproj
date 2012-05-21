@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88A4E2AA156407A500A39A93 /* UIMainPreferencesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2A9156407A500A39A93 /* UIMainPreferencesView.m */; };
 		C06C96C51551BD11007664B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06C96C41551BD11007664B2 /* UIKit.framework */; };
 		C06C96C71551BD11007664B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06C96C61551BD11007664B2 /* Foundation.framework */; };
 		C06C96C91551BD11007664B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06C96C81551BD11007664B2 /* CoreGraphics.framework */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88A4E2A8156407A500A39A93 /* UIMainPreferencesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMainPreferencesView.h; sourceTree = "<group>"; };
+		88A4E2A9156407A500A39A93 /* UIMainPreferencesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMainPreferencesView.m; sourceTree = "<group>"; };
 		C06C96C01551BD11007664B2 /* MeetUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06C96C41551BD11007664B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C06C96C61551BD11007664B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -204,6 +207,8 @@
 				F30AEFC2155AC3560062AAE0 /* UIMainView.m */,
 				F30AEFC4155AF6000062AAE0 /* UIMenuView.h */,
 				F30AEFC5155AF6000062AAE0 /* UIMenuView.m */,
+				88A4E2A8156407A500A39A93 /* UIMainPreferencesView.h */,
+				88A4E2A9156407A500A39A93 /* UIMainPreferencesView.m */,
 			);
 			name = "Main Screen";
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				F30AEFA9155A86210062AAE0 /* SplitView.m in Sources */,
 				F30AEFC3155AC3570062AAE0 /* UIMainView.m in Sources */,
 				F30AEFC6155AF6000062AAE0 /* UIMenuView.m in Sources */,
+				88A4E2AA156407A500A39A93 /* UIMainPreferencesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
