@@ -33,13 +33,29 @@ static MUAccount* sharedMUAccount = nil;
     return sharedMUAccount;
 }
 
+//-(void)initializeGPSTracking
+//{
+//    // Create the location manager if this object does not
+//    // already have one.
+//    if (nil == locationManager)
+//        locationManager = [[CLLocationManager alloc] init];
+//    
+//    locationManager.delegate = self;
+//    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+//    
+//    // Set a movement threshold for new events.
+//    locationManager.distanceFilter = 500;
+//    
+//    [locationManager startUpdatingLocation];
+//}
+
 -(id)init
 {
     if (self = [super init])
     {
         sharedMUAccount = self;
-        self.meetup = [[[MeetUp alloc] init] autorelease];
-        [_meetup setSessionDelegate:self];
+        self.meetup = [[MeetUp alloc] initWithSessionDelegate:self];
+        [_meetup release];
         self.fbAccount = [[[FBAccount alloc] init] autorelease];
         self.vkAccount = [[[VKAccount alloc] init] autorelease];
         self.muUser = [[[MUUser alloc] init] autorelease];
@@ -200,6 +216,13 @@ static MUAccount* sharedMUAccount = nil;
     {
         [sessionDelegate didFailWithErrors:error];
     }
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+	didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"newLocation %@", newLocation);
 }
 
 @end
