@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MPUIView.h"
 
-@interface UIMainView : UIView
+@interface UIMainView : UIView<UITableViewDataSource, UITableViewDelegate>
 {
+    UITableView* people;
+    UITableView* talks;
     MPUIView *mpuiView;
 }
 @property (nonatomic, retain) MPUIView* mpuiView;

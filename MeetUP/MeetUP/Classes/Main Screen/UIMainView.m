@@ -44,6 +44,18 @@
             }
         }
         [mpuiView layoutNavigationBar];
+        CGRect frame = CGRectMake(0.0, navbarView.self.frame.origin.y + navbarView.frame.size.height, self.frame.size.width, self.frame.size.height - navbarView.frame.size.height - navbarView.self.frame.origin.y);
+        people = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
+        people.backgroundColor = [UIColor clearColor];
+        people.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        people.delegate = self;
+        people.dataSource = self;
+        people.rowHeight = 90;
+        people.sectionHeaderHeight = 10.0;
+        people.sectionFooterHeight = 10.0;
+        people.exclusiveTouch = YES;
+        [self addSubview:people];
+        [people reloadData];
     }
     return self;
 }
@@ -61,6 +73,33 @@
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [(SplitView*)self.superview toMiddleView];
+}
+
+#pragma mark - Table View Delegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    cell.textLabel.text = @"Hello";
+    
+    return cell;
 }
 
 @end
