@@ -15,13 +15,14 @@
 @interface MUUser : SNUser <MURequestDelegate>
 {
     MeetUp*     _meetup;
-    CLLocation* lastFix;
+    CLLocation* _lastFix;
     MURequest*  _updateProfileRequest;
     MURequest*  _nearbayUsersRequest;
     MURequest*  _userRequest;
 }
 
 @property (nonatomic, retain) MeetUp* meetup;
+@property (nonatomic, retain) CLLocation* lastFix;
 
 -(void)updateProfile;
 -(void)getNearbyUsers;

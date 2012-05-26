@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88153860156A9CD20033EF68 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8815385F156A9CD20033EF68 /* CoreLocation.framework */; };
 		88A4E2AA156407A500A39A93 /* UIMainPreferencesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2A9156407A500A39A93 /* UIMainPreferencesView.m */; };
 		C06C96C51551BD11007664B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06C96C41551BD11007664B2 /* UIKit.framework */; };
 		C06C96C71551BD11007664B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06C96C61551BD11007664B2 /* Foundation.framework */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8815385F156A9CD20033EF68 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		88A4E2A8156407A500A39A93 /* UIMainPreferencesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMainPreferencesView.h; sourceTree = "<group>"; };
 		88A4E2A9156407A500A39A93 /* UIMainPreferencesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMainPreferencesView.m; sourceTree = "<group>"; };
 		C06C96C01551BD11007664B2 /* MeetUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88153860156A9CD20033EF68 /* CoreLocation.framework in Frameworks */,
 				F3F49D571556F0D800579116 /* QuartzCore.framework in Frameworks */,
 				C07454B31551E2FD00A53EAC /* libMSDK.a in Frameworks */,
 				C06C96C51551BD11007664B2 /* UIKit.framework in Frameworks */,
@@ -143,6 +146,7 @@
 		C06C96C31551BD11007664B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8815385F156A9CD20033EF68 /* CoreLocation.framework */,
 				F3F49D561556F0D800579116 /* QuartzCore.framework */,
 				C07454A71551E2EB00A53EAC /* MSDK.xcodeproj */,
 				F3F49D561556F0D800579116 /* QuartzCore.framework */,

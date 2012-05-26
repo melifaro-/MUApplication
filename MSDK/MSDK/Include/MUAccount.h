@@ -15,9 +15,12 @@
 #import "MUUser.h"
 
 @class MeetUp;
+@class CLLocationManager;
 
-@interface MUAccount : SNAccount <SNSessionDelegate , MURequestDelegate>
+@interface MUAccount : SNAccount <SNSessionDelegate , MURequestDelegate, CLLocationManagerDelegate>
 {
+    CLLocationManager*  locationManager;
+    
     MUUser*     _muUser;
     MeetUp*     _meetup;
     FBAccount*  _fbAccount;

@@ -8,6 +8,7 @@
 
 #import "MUAccount.h"
 #import "MeetUp.h"
+#import <CoreLocation/CoreLocation.h>
 
 #define MUACCOUNT_FILE @"muaccount"
 
@@ -29,8 +30,25 @@ static MUAccount* sharedMUAccount = nil;
         {
             sharedMUAccount = [[MUAccount alloc] init];
         }
+        [sharedMUAccount startGPSTracking];
     }
     return sharedMUAccount;
+}
+
+-(void)startGPSTracking
+{
+    // Create the location manager if this object does not
+    // already have one.
+    if (nil == locationManager)
+        locationManager = [[CLLocationManager alloc] init];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    
+    // Set a movement threshold for new events.
+    locationManager.distanceFilter = 500;
+    
+    [locationManager startUpdatingLocation];
 }
 
 -(id)init
@@ -38,8 +56,8 @@ static MUAccount* sharedMUAccount = nil;
     if (self = [super init])
     {
         sharedMUAccount = self;
-        self.meetup = [[[MeetUp alloc] init] autorelease];
-        [_meetup setSessionDelegate:self];
+        self.meetup = [[MeetUp alloc] initWithSessionDelegate:self];
+        [_meetup release];
         self.fbAccount = [[[FBAccount alloc] init] autorelease];
         self.vkAccount = [[[VKAccount alloc] init] autorelease];
         self.muUser = [[[MUUser alloc] init] autorelease];
@@ -200,6 +218,18 @@ static MUAccount* sharedMUAccount = nil;
     {
         [sessionDelegate didFailWithErrors:error];
     }
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+	didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    if (_muUser)
+    {
+        [_muUser setLastFix:newLocation];
+        [_muUser updateProfile];
+    }
+    NSLog(@"newLocation %@", newLocation);
 }
 
 @end
