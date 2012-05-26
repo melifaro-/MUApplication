@@ -50,7 +50,6 @@
         people.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         people.delegate = self;
         people.dataSource = self;
-        people.rowHeight = 90;
         people.sectionHeaderHeight = 10.0;
         people.sectionFooterHeight = 10.0;
         people.exclusiveTouch = YES;
@@ -102,4 +101,9 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //show account
+}
+    
 @end
