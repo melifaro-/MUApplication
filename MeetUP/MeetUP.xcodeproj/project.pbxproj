@@ -28,6 +28,10 @@
 		F30AEFB0155A9C4C0062AAE0 /* SplitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30AEFAF155A9C4C0062AAE0 /* SplitView.xib */; };
 		F30AEFC3155AC3570062AAE0 /* UIMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = F30AEFC2155AC3560062AAE0 /* UIMainView.m */; };
 		F30AEFC6155AF6000062AAE0 /* UIMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F30AEFC5155AF6000062AAE0 /* UIMenuView.m */; };
+		F3EB60DB1574CC4A00D00159 /* UIMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EB60DA1574CC4A00D00159 /* UIMainViewCell.m */; };
+		F3EB60DD1574CCED00D00159 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3EB60DC1574CCED00D00159 /* MainViewCell.xib */; };
+		F3EB60E11574E76B00D00159 /* unknownPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = F3EB60E01574E76B00D00159 /* unknownPhoto.png */; };
+		F3EB60E41574EC8000D00159 /* UICustomPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EB60E31574EC8000D00159 /* UICustomPhotoView.m */; };
 		F3F49D501556F0AE00579116 /* UIRegesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D481556F0AE00579116 /* UIRegesterViewController.m */; };
 		F3F49D511556F0AE00579116 /* MPUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D4A1556F0AE00579116 /* MPUIView.m */; };
 		F3F49D521556F0AE00579116 /* MPUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F49D4B1556F0AE00579116 /* MPUIView.xib */; };
@@ -90,6 +94,12 @@
 		F30AEFC2155AC3560062AAE0 /* UIMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIMainView.m; path = "MeetUP/Classes/Main Screen/UIMainView.m"; sourceTree = "<group>"; };
 		F30AEFC4155AF6000062AAE0 /* UIMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIMenuView.h; path = "MeetUP/Classes/Main Screen/UIMenuView.h"; sourceTree = "<group>"; };
 		F30AEFC5155AF6000062AAE0 /* UIMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIMenuView.m; path = "MeetUP/Classes/Main Screen/UIMenuView.m"; sourceTree = "<group>"; };
+		F3EB60D91574CC4A00D00159 /* UIMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIMainViewCell.h; path = MeetUP/Classes/Common/UIMainViewCell.h; sourceTree = "<group>"; };
+		F3EB60DA1574CC4A00D00159 /* UIMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIMainViewCell.m; path = MeetUP/Classes/Common/UIMainViewCell.m; sourceTree = "<group>"; };
+		F3EB60DC1574CCED00D00159 /* MainViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		F3EB60E01574E76B00D00159 /* unknownPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unknownPhoto.png; sourceTree = "<group>"; };
+		F3EB60E21574EC8000D00159 /* UICustomPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICustomPhotoView.h; sourceTree = "<group>"; };
+		F3EB60E31574EC8000D00159 /* UICustomPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICustomPhotoView.m; sourceTree = "<group>"; };
 		F3F49D471556F0AE00579116 /* UIRegesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRegesterViewController.h; sourceTree = "<group>"; };
 		F3F49D481556F0AE00579116 /* UIRegesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRegesterViewController.m; sourceTree = "<group>"; };
 		F3F49D491556F0AE00579116 /* MPUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUIView.h; sourceTree = "<group>"; };
@@ -193,6 +203,7 @@
 		C07454C71551E3F600A53EAC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F3EB60E01574E76B00D00159 /* unknownPhoto.png */,
 				F30AEFAA155A9B830062AAE0 /* Common */,
 				F30AEF85155A63130062AAE0 /* Main Screen */,
 				F3F49D5915572F4E00579116 /* Splash */,
@@ -230,6 +241,10 @@
 			children = (
 				F30AEFA4155A86210062AAE0 /* SplitView.h */,
 				F30AEFA5155A86210062AAE0 /* SplitView.m */,
+				F3EB60D91574CC4A00D00159 /* UIMainViewCell.h */,
+				F3EB60DA1574CC4A00D00159 /* UIMainViewCell.m */,
+				F3EB60E21574EC8000D00159 /* UICustomPhotoView.h */,
+				F3EB60E31574EC8000D00159 /* UICustomPhotoView.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -238,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				F30AEFAF155A9C4C0062AAE0 /* SplitView.xib */,
+				F3EB60DC1574CCED00D00159 /* MainViewCell.xib */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -365,6 +381,8 @@
 				F3F49D601557D01B00579116 /* UIMeetUpRegesterViewController.xib in Resources */,
 				F30AEF87155A633D0062AAE0 /* UIMainScreenViewController.xib in Resources */,
 				F30AEFB0155A9C4C0062AAE0 /* SplitView.xib in Resources */,
+				F3EB60DD1574CCED00D00159 /* MainViewCell.xib in Resources */,
+				F3EB60E11574E76B00D00159 /* unknownPhoto.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +407,8 @@
 				F30AEFC3155AC3570062AAE0 /* UIMainView.m in Sources */,
 				F30AEFC6155AF6000062AAE0 /* UIMenuView.m in Sources */,
 				88A4E2AA156407A500A39A93 /* UIMainPreferencesView.m in Sources */,
+				F3EB60DB1574CC4A00D00159 /* UIMainViewCell.m in Sources */,
+				F3EB60E41574EC8000D00159 /* UICustomPhotoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

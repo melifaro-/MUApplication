@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MPUIView.h"
 
+enum 
+{
+    DISTANCE_NEAR = 0,
+    DISTANCE_METERS100,
+    DISTANCE_METERS1000,
+    DISTANCE_COUNT
+}distance;
+
 @interface UIMainView : UIView<UITableViewDataSource, UITableViewDelegate>
 {
     UITableView* people;
