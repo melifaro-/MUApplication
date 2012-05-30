@@ -116,6 +116,7 @@
 -(void)didPhotoReceived
 {
     myInfoTextView.text = @"[myImage setImage:_user.photo]";
+    [_userPicture setImage:_fbUser.photo];
 }
 
 - (void)viewDidLoad

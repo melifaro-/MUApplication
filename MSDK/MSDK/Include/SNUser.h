@@ -45,6 +45,9 @@
     NSArray             *interests;
     NSArray             *jobs;
     NSArray             *friends;
+
+    NSURLConnection*      _connection;
+    NSMutableData*        _responseText;
 }
 
 @property (nonatomic, assign) id<SNUserDelegate>    userDelegate;
@@ -60,5 +63,7 @@
 @property (nonatomic, retain) NSArray               *interests;
 @property (nonatomic, retain) NSArray               *jobs;
 @property (nonatomic, retain) NSArray               *friends;
+
+-(void)downloadUserPhoto;
 
 @end

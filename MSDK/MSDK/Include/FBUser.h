@@ -19,9 +19,8 @@
     FBRequest   *_profileRequest;
     FBRequest   *_userRequest;
     FBRequest   *_userFriendsRequest;
-    
-    NSURLConnection*      _connection;
-    NSMutableData*        _responseText;
+    FBRequest   *_pictureURLRequest;
+    FBRequest   *_pictureRequest;
 }
 
 @property (nonatomic, retain) Facebook  *facebook;
@@ -31,5 +30,6 @@
 -(void)fillProfile;
 -(void)getUserFriends;
 -(void)getUserById:(NSString*)userId;
+-(void)getUserPicture;
 
 @end

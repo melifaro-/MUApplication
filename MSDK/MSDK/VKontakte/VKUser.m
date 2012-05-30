@@ -13,7 +13,6 @@
 @interface VKUser(privateMethods)
 
 -(void)parseUserProfileFromResponse:(id)response;
--(void)parseUserFriendsFromResponse:(id)response;
 
 @end
 
@@ -133,64 +132,13 @@
     self.birthday = [response objectForKey:@"bdate"];
     self.sex = [response objectForKey:@"sex"];
     self.photoUrl = [response objectForKey:@"photo_medium"];
+    [self downloadUserPhoto];
 
-    if (self.photoUrl)
-    {
-        NSMutableURLRequest* request =
-        [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.photoUrl]
-                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                            timeoutInterval:180];
-        [request setHTTPMethod:@"GET"];
-        _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    }
-
-    
-    //        user.photo;
     //        user.status;
     //        user.location;
     self.timezone  =  [(NSString*)[response objectForKey:@"timezone"] integerValue];
     //        user.iterests;
     self.jobs = [response objectForKey:@"work"];
-}
-
--(void)parseUserFriendsFromResponse:(id)response
-{
-
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-// NSURLConnectionDelegate
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    _responseText = [[NSMutableData alloc] init];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [_responseText appendData:data];
-}
-
-- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
-                  willCacheResponse:(NSCachedURLResponse*)cachedResponse
-{
-    return nil;
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    if (connection == _connection)
-    {
-        self.photo = [UIImage imageWithData:_responseText];
-        [userDelegate didPhotoReceived];
-    }
-    [_responseText release];
-    [_connection release];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    NSLog(@"errors %@", error);
 }
 
 @end
