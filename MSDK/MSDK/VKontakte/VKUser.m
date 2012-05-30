@@ -12,8 +12,8 @@
 
 @interface VKUser(privateMethods)
 
--(void)parseUserProfileResponse:(id)response;
--(void)parseUserFriendsResponse:(id)response;
+-(void)parseUserProfileFromResponse:(id)response;
+-(void)parseUserFriendsFromResponse:(id)response;
 
 @end
 
@@ -43,7 +43,7 @@
 {
     if (self = [super init])
     {
-        [self parseUserProfileResponse:resp];
+        [self parseUserProfileFromResponse:resp];
         self.vkontakte = [VKAccount getInstance].vkontakte;
     }
     return self;
@@ -97,26 +97,27 @@
 
 -(void)request:(VKRequest *)request didLoad:(id)result
 {
-    NSLog(@"request result:\n %@", result);
+//    NSLog(@"request result:\n %@", result);
+    result = [result objectForKey:@"response"];
     if (request == _userRequest)
     {
-        [self parseUserProfileResponse:result];
+        result = [result objectAtIndex:0];
+        [self parseUserProfileFromResponse:result];
         [userDelegate didProfileReceived];
     }
     else if (request == _userFriendsRequest)
     {
-//        NSArray *friends = [result objectForKey:@"response"];
-//        NSMutableArray *parsedFriends = [[NSMutableArray alloc] init];
-//        for (id friend in friends)
-//        {
-//            VKUser *user = [[VKUser alloc] initWithResponse:friend];
-//            [user setVkontakte:self.vkontakte];
-//            [parsedFriends addObject:user];
-//            [user release];
-//        }
-//        self.myFriends = parsedFriends;
-//        [parsedFriends release];
-//        [userDelegate didMyFriendsReceived];
+        NSMutableArray *parsedFriends = [[NSMutableArray alloc] init];
+        for (id friend in result)
+        {
+            VKUser *user = [[VKUser alloc] initWithResponse:friend];
+            [user setVkontakte:self.vkontakte];
+            [parsedFriends addObject:user];
+            [user release];
+        }
+        self.friends = parsedFriends;
+        [parsedFriends release];
+        [userDelegate didUserFriendsReceived];
     }
     else if (request == _profileRequest)
     {
@@ -124,22 +125,12 @@
     }
 }
 
--(void)parseUserProfileResponse:(id)response
+-(void)parseUserProfileFromResponse:(id)response
 {
-    response = [response objectForKey:@"response"];
-    response = [response objectAtIndex:0];
     id parsedUId = [response objectForKey:@"uid"];
     self.uid = [parsedUId isKindOfClass:[NSDecimalNumber class]] ? [parsedUId stringValue] : [NSString stringWithFormat:@"%@", parsedUId];
     self.name = [NSString stringWithFormat:@"%@ %@", [response objectForKey:@"first_name"], [response objectForKey:@"last_name"]];
-    
-    NSString *birthDayToString = [response objectForKey:@"bdate"];
-    if (birthDayToString)
-    {
-        NSDateFormatter *formater = [[NSDateFormatter alloc] init];
-        self.birthday  =  [formater dateFromString:birthDayToString];
-        [formater release];
-    }
-    
+    self.birthday = [response objectForKey:@"bdate"];
     self.sex = [response objectForKey:@"sex"];
     self.photoUrl = [response objectForKey:@"photo_medium"];
 
@@ -162,7 +153,7 @@
     self.jobs = [response objectForKey:@"work"];
 }
 
--(void)parseUserFriendsResponse:(id)response
+-(void)parseUserFriendsFromResponse:(id)response
 {
 
 }

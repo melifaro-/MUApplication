@@ -35,22 +35,6 @@ static MUAccount* sharedMUAccount = nil;
     return sharedMUAccount;
 }
 
--(void)startGPSTracking
-{
-    // Create the location manager if this object does not
-    // already have one.
-    if (nil == locationManager)
-        locationManager = [[CLLocationManager alloc] init];
-    
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-    
-    // Set a movement threshold for new events.
-    locationManager.distanceFilter = 500;
-    
-    [locationManager startUpdatingLocation];
-}
-
 -(id)init
 {
     if (self = [super init])
@@ -100,6 +84,22 @@ static MUAccount* sharedMUAccount = nil;
     self.fbAccount = nil;
     self.vkAccount = nil;
     [super dealloc];
+}
+
+-(void)startGPSTracking
+{
+    // Create the location manager if this object does not
+    // already have one.
+    if (nil == locationManager)
+        locationManager = [[CLLocationManager alloc] init];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    
+    // Set a movement threshold for new events.
+    locationManager.distanceFilter = 500;
+    
+    [locationManager startUpdatingLocation];
 }
 
 -(BOOL)handleOpenURL:(NSURL *)url

@@ -136,7 +136,6 @@ static void *finishedContext = @"finishedContext";
         [params setValue:scope forKey:@"scope"];
     }
      NSString *nextUrl = @"http://iebotov.narod2.ru/vk.html";
-    //[NSString stringWithFormat:@"vk%@://authorize.com", appId];//@"http://api.vk.com/blank.html"; 
     [params setValue:nextUrl forKey:@"redirect_uri"];
 
     NSString *vkUrl = [VKRequest serializeURL:@"http://oauth.vk.com/authorize" params:params httpMethod:@"GET"];

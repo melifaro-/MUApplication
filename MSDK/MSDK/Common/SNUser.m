@@ -76,4 +76,21 @@
     [super dealloc];
 }
 
+-(NSString*)description
+{
+    NSString* description = [NSString stringWithFormat:@"uid %@,\n name %@,\n birthday %@,\n sex %@,\n photoUrl %@,\n photo %@,\n status %@,\n location %@,\n interests %@,\n jobs %@,\n friends",
+                      self.uid,
+                      self.name,
+                      self.birthday,
+                      self.sex,
+                      self.photoUrl,
+                      self.photo,
+                      self.status,
+                      self.location,
+                      self.interests,
+                      self.jobs,
+                      self.friends];
+    return description;
+}
+
 @end

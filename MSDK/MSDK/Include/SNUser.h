@@ -35,7 +35,7 @@
     id<SNUserDelegate>  userDelegate;
     NSString            *uid;
     NSString            *name;
-    NSDate              *birthday;
+    NSString            *birthday;
     NSString            *sex; //male, female
     NSString            *photoUrl;
     UIImage             *photo;
@@ -50,7 +50,7 @@
 @property (nonatomic, assign) id<SNUserDelegate>    userDelegate;
 @property (nonatomic, retain) NSString              *uid;
 @property (nonatomic, retain) NSString              *name;
-@property (nonatomic, retain) NSDate                *birthday;
+@property (nonatomic, retain) NSString              *birthday;
 @property (nonatomic, retain) NSString              *sex;
 @property (nonatomic, retain) NSString              *photoUrl;
 @property (nonatomic, retain) UIImage               *photo;
