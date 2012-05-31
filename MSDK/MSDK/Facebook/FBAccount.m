@@ -125,6 +125,7 @@
                                 @"user_likes", 
                                 @"read_stream",
                                 @"user_photos",
+                                @"user_birthday",
                                 nil];
         [facebook authorize:permissions];
         [permissions release];

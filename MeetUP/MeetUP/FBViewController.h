@@ -14,6 +14,7 @@
 @interface FBViewController : MPUIView <SNSessionDelegate, SNUserDelegate>
 {
     IBOutlet UITextView *myInfoTextView;
+    IBOutlet UIImageView*   _userPicture;
     FBUser              *_fbUser;
     FBAccount           *_fba;
     MUAccount           *_muAccount;

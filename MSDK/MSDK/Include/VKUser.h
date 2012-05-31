@@ -18,9 +18,6 @@
     VKRequest*  _profileRequest;
     VKRequest*  _userRequest;
     VKRequest*  _userFriendsRequest;
-
-    NSURLConnection*      _connection;
-    NSMutableData*        _responseText;
 }
 
 @property (nonatomic, retain) Vkontakte* vkontakte;

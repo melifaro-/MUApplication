@@ -56,15 +56,13 @@
 -(IBAction)getMeButtonTouched:(id)sender
 {
     [_user setUserDelegate:self];
-    [_user getUserById:_user.uid];
+    [_user fillProfile];
 }
 
 -(IBAction)getMyFriendsButtonTouched:(id)sender
 {
-//    VKAccount *vkAccount = [AppDelegate appDelegate].vkAccount;
-//    SNUser *user = [[SNUser alloc] init];
-//    [user setUserDelegate:self];
-//    [user getUserById:vkAccount.userId];
+    [_user setUserDelegate:self];
+    [_user getUserFriends];
 }
 
 - (void)didLogin

@@ -9,6 +9,9 @@
 #import "FBUser.h"
 #import "FBConnect.h"
 
+#define MALE    @"male"
+#define FEMALE  @"female"
+
 @interface FBUser()
 
 -(void)parseUserProfileResponse:(id)response;
@@ -44,6 +47,11 @@
     _userFriendsRequest = [facebook requestWithGraphPath:[NSString stringWithFormat:@"%@/friends", self.uid] andDelegate:self];
 }
 
+-(void)getUserPicture
+{
+    _pictureURLRequest = [facebook requestWithGraphPath:[NSString stringWithFormat:@"%@?fields=picture", self.uid] andDelegate:self];
+}
+
 #pragma mark - FBRequest Delegate Methods
 
 -(void)request:(FBRequest *)request didFailWithError:(NSError *)error
@@ -59,6 +67,7 @@
     {
         [self parseUserProfileResponse:result];
         [userDelegate didUserReceived];
+        [self getUserPicture];
     }
     else if (request == _userFriendsRequest)
     {
@@ -75,6 +84,11 @@
         [parsedFriends release];
         [userDelegate didUserFriendsReceived];
     }
+    else if (request == _pictureURLRequest)
+    {
+        self.photoUrl = [result objectForKey:@"picture"];
+        [self downloadUserPhoto];
+    }
 }
 
 -(void)dealloc
@@ -87,7 +101,7 @@
 {
     self.uid = [response objectForKey:@"id"];
     self.name = [response objectForKey:@"name"];
-    //        user.birthday  = [result objectForKey:@"name"];
+    self.birthday = [response objectForKey:@"birthday"];
     self.sex = [response objectForKey:@"gender"];
     //        user.photoUrl;
     //        user.photo;

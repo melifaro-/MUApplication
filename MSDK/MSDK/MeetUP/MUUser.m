@@ -46,10 +46,13 @@
     if (_lastFix)
     {
         NSLog(@"%@", [NSString stringWithFormat:@"%f,%f", _lastFix.coordinate.latitude, _lastFix.coordinate.longitude]);
-        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                      [NSString stringWithFormat:@"%f,%f", _lastFix.coordinate.latitude, _lastFix.coordinate.longitude] , @"location",
-                                      nil];
-        _updateProfileRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"PUT" andDelegate:self];        
+        if ([_meetup isSessionValid])
+        {
+            NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                           [NSString stringWithFormat:@"%f,%f", _lastFix.coordinate.latitude, _lastFix.coordinate.longitude] , @"location",
+                                           nil];
+            _updateProfileRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"PUT" andDelegate:self];   
+        }        
     }
 }
 

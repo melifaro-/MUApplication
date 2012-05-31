@@ -76,4 +76,69 @@
     [super dealloc];
 }
 
+-(NSString*)description
+{
+    NSString* description = [NSString stringWithFormat:@"uid %@,\n name %@,\n birthday %@,\n sex %@,\n photoUrl %@,\n photo %@,\n status %@,\n location %@,\n interests %@,\n jobs %@,\n friends",
+                      self.uid,
+                      self.name,
+                      self.birthday,
+                      self.sex,
+                      self.photoUrl,
+                      self.photo,
+                      self.status,
+                      self.location,
+                      self.interests,
+                      self.jobs,
+                      self.friends];
+    return description;
+}
+
+-(void)downloadUserPhoto
+{
+    if (self.photoUrl)
+    {
+        NSMutableURLRequest* request =
+        [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.photoUrl]
+                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                            timeoutInterval:180];
+        [request setHTTPMethod:@"GET"];
+        _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    }
+}
+
+
+// NSURLConnectionDelegate
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    _responseText = [[NSMutableData alloc] init];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [_responseText appendData:data];
+}
+
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
+                  willCacheResponse:(NSCachedURLResponse*)cachedResponse
+{
+    return nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    if (connection == _connection)
+    {
+        self.photo = [UIImage imageWithData:_responseText];
+        [userDelegate didPhotoReceived];
+    }
+    [_responseText release];
+    [_connection release];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"errors %@", error);
+}
+
 @end

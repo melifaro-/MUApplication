@@ -181,7 +181,6 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
     NSString* responseString = [[[NSString alloc] initWithData:data
                                                       encoding:NSUTF8StringEncoding]
                                 autorelease];
-    NSLog(@"responseString %@", responseString);
     if ([responseString isEqualToString:@"true"])
     {
         return [NSDictionary dictionaryWithObject:@"true" forKey:@"result"];
