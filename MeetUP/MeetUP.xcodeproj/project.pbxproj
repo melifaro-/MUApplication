@@ -32,6 +32,7 @@
 		F3EB60DD1574CCED00D00159 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3EB60DC1574CCED00D00159 /* MainViewCell.xib */; };
 		F3EB60E11574E76B00D00159 /* unknownPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = F3EB60E01574E76B00D00159 /* unknownPhoto.png */; };
 		F3EB60E41574EC8000D00159 /* UICustomPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EB60E31574EC8000D00159 /* UICustomPhotoView.m */; };
+		F3EB60E71576C0A000D00159 /* UIBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EB60E61576C0A000D00159 /* UIBadgeView.m */; };
 		F3F49D501556F0AE00579116 /* UIRegesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D481556F0AE00579116 /* UIRegesterViewController.m */; };
 		F3F49D511556F0AE00579116 /* MPUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F49D4A1556F0AE00579116 /* MPUIView.m */; };
 		F3F49D521556F0AE00579116 /* MPUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F49D4B1556F0AE00579116 /* MPUIView.xib */; };
@@ -100,6 +101,8 @@
 		F3EB60E01574E76B00D00159 /* unknownPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unknownPhoto.png; sourceTree = "<group>"; };
 		F3EB60E21574EC8000D00159 /* UICustomPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICustomPhotoView.h; sourceTree = "<group>"; };
 		F3EB60E31574EC8000D00159 /* UICustomPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICustomPhotoView.m; sourceTree = "<group>"; };
+		F3EB60E51576C0A000D00159 /* UIBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBadgeView.h; sourceTree = "<group>"; };
+		F3EB60E61576C0A000D00159 /* UIBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBadgeView.m; sourceTree = "<group>"; };
 		F3F49D471556F0AE00579116 /* UIRegesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRegesterViewController.h; sourceTree = "<group>"; };
 		F3F49D481556F0AE00579116 /* UIRegesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRegesterViewController.m; sourceTree = "<group>"; };
 		F3F49D491556F0AE00579116 /* MPUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUIView.h; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 				F3EB60DA1574CC4A00D00159 /* UIMainViewCell.m */,
 				F3EB60E21574EC8000D00159 /* UICustomPhotoView.h */,
 				F3EB60E31574EC8000D00159 /* UICustomPhotoView.m */,
+				F3EB60E51576C0A000D00159 /* UIBadgeView.h */,
+				F3EB60E61576C0A000D00159 /* UIBadgeView.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				88A4E2AA156407A500A39A93 /* UIMainPreferencesView.m in Sources */,
 				F3EB60DB1574CC4A00D00159 /* UIMainViewCell.m in Sources */,
 				F3EB60E41574EC8000D00159 /* UICustomPhotoView.m in Sources */,
+				F3EB60E71576C0A000D00159 /* UIBadgeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

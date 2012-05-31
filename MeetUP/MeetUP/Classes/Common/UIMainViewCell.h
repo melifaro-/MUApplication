@@ -8,18 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "UICustomPhotoView.h"
+#import "UIBadgeView.h"
 
 @interface UIMainViewCell : UITableViewCell
 {
-    IBOutlet UIImageView* photo;
+    UICustomPhotoView* photo;
     IBOutlet UILabel* name;
     IBOutlet UIView* highlightView;
     UILabel* message;
     NSArray* people;
+    UIBadgeView* badge;
     int type;
 }
 
-@property (nonatomic, retain) UIImageView* photo;
+@property (nonatomic, retain) UICustomPhotoView* photo;
+@property (nonatomic, retain) UIBadgeView* badge;
 @property (nonatomic, retain) UILabel* name;
 @property (nonatomic, retain) UILabel* message;
 @property (nonatomic, retain) UIView* highlightView;

@@ -14,12 +14,26 @@
 @synthesize message;
 @synthesize people;
 @synthesize type;
+@synthesize badge;
 @synthesize highlightView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
+    if (self)
+    {
+        // Initialization code
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        photo = [[UICustomPhotoView alloc] init];
+        badge = [[UIBadgeView alloc] init];
         // Initialization code
     }
     return self;
@@ -50,11 +64,14 @@
                                            self.frame.size.height)];
         [highlightView setBackgroundColor:[UIColor yellowColor]];
     }
-    [photo removeFromSuperview];
-    [[photo layer] setCornerRadius:photo.frame.size.height/2.0];
-    [[photo layer] setMasksToBounds:YES];
-    [[photo layer] setBorderWidth:2.5];
-    [[photo layer] setBorderColor:[UIColor whiteColor].CGColor];
-
+    //photo
+    [photo setFrame:CGRectMake(10, 14, 60, 60)];
+    [photo setImageRadius:27 WhiteZoneRadius:2.5 andBlackZoneRadius:0.7];
+    [photo.photo setImage:[UIImage imageNamed:@"unknownPhoto.png"]];
+    [highlightView addSubview:photo];
+    //badge
+    [badge setBadgeNumber:@"+289"];
+    [badge setFrame:CGRectMake(230.0, 44.0, badge.frame.size.width, badge.frame.size.height)];
+    [highlightView addSubview:badge];
 }
 @end

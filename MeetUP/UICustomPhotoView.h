@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface UICustomPhotoView : UIView
 {
     UIImageView *photo;
-    UIView *border;
 }
+@property (nonatomic, retain) UIImageView *photo;;
+
+- (id)initWithImage:(UIImage*)image;
+- (void)setImageRadius:(double)imageRad WhiteZoneRadius:(double)whiteRad andBlackZoneRadius:(double)blackRad;
 
 @end

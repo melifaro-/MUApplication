@@ -51,6 +51,7 @@
         people.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         people.delegate = self;
         people.rowHeight = 83;
+        [people setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         [people setContentInset:UIEdgeInsetsMake(10, 0, 0, 0)];
         people.dataSource = self;
         people.exclusiveTouch = YES;
