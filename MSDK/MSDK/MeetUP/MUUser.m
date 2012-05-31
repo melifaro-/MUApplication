@@ -60,11 +60,7 @@
 {
     if (_lastFix)
     {
-        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       [NSString stringWithFormat:@"%f,%f", _lastFix.coordinate.latitude, _lastFix.coordinate.longitude], @"center",
-                                       SEARCH_RADIUS, @"radius",
-                                       nil];
-        _nearbayUsersRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"GET" andDelegate:self];
+        [self getUsersWithFilter:@"%" aroundLocation:_lastFix withRadius:SEARCH_RADIUS];
     }
 }
 
@@ -73,6 +69,20 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    nil];
     _userRequest = [_meetup requestWithMethodName:[NSString stringWithFormat:@"users/%@", userId] andParams:params andHttpMethod:@"GET" andDelegate:self];
+}
+
+-(void)getUsersWithFilter:(NSString*)userFilter aroundLocation:(CLLocation*)searchLocation withRadius:(NSString*)radius
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   
+                                   userFilter, @"name",
+                                   nil];
+    if (searchLocation && radius)
+    {
+        [params setValue:[NSString stringWithFormat:@"%f,%f", searchLocation.coordinate.latitude, searchLocation.coordinate.longitude] forKey:@"center"];
+        [params setValue:radius forKey:@"radius"];
+    }
+    _usersFilterRequest = [_meetup requestWithMethodName:@"users" andParams:params andHttpMethod:@"GET" andDelegate:self];
 }
 
 #pragma mark - VKRequest Delegate Methods
@@ -93,13 +103,13 @@
     {
 
     }
-    else if (request == _nearbayUsersRequest)
+    else if (request == _updateProfileRequest)
     {
 
     }
-    else if (request == _updateProfileRequest)
+    else if (request == _usersFilterRequest)
     {
-        
+
     }
 }
 

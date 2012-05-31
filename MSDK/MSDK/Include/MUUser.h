@@ -17,7 +17,7 @@
     MeetUp*     _meetup;
     CLLocation* _lastFix;
     MURequest*  _updateProfileRequest;
-    MURequest*  _nearbayUsersRequest;
+    MURequest*  _usersFilterRequest;
     MURequest*  _userRequest;
 }
 
@@ -27,5 +27,7 @@
 -(void)updateProfile;
 -(void)getNearbyUsers;
 -(void)getUserById:(NSString *)userId;
+//userFilter синтаксис аналогичен SQL-оператору like, например name=jo%.
+-(void)getUsersWithFilter:(NSString*)userFilter aroundLocation:(CLLocation*)location withRadius:(NSString*)radius; 
 
 @end
