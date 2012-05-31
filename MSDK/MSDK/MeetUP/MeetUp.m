@@ -89,6 +89,10 @@ static NSString* kRestserverBaseURL = @"http://aipmedia.ru:3001/";
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    snAccount.snType, @"provider",
                                    nil];
+    if (snAccount.authkey)
+    {
+        [params setValue:snAccount.authkey forKey:@"key"];
+    }
     _snLoginRequest = [self requestWithMethodName:@"authentication" andParams:params andHttpMethod:@"POST" andDelegate:self];
 }
 
